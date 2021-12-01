@@ -1,0 +1,8 @@
+.error p.title{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.error p{
+    text-align: center;
+}

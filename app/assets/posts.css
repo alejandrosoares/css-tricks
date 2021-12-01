@@ -1,0 +1,72 @@
+/* POSTS */
+#main{
+    margin:1rem auto;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.post{
+    margin: 2px;
+    background-color: white;
+    border-radius: 10px;
+    padding:10px 5px;
+}
+.post .title{
+    margin:10px 15px;
+    display: block;
+    text-align: center;
+    color:var(--dark);
+    font-weight: bold;
+}
+.post img{
+    display: block;
+    margin: 0 auto;
+    max-width: 280px;
+    height: auto;
+    border-radius: 10px;
+}
+.post p{
+    display: flex;
+    justify-content: space-between;
+    margin:2px 0 10px 10px;
+    font-size: 0.8rem;
+}
+.post p time{
+    color:var(--grey);
+}
+
+.post-description{
+    background-color: white;
+    margin:10px auto;
+    border-radius: 10px;
+    max-width: 1200px;
+    padding: 0.5rem;
+}
+
+.post-description aside h2{
+    text-align: center;
+}
+
+.post-description aside time{
+    color:var(--grey);
+    font-size: 14px;
+}
+
+.post-description hr{
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 90%;
+}
+
+.post-description article{
+    margin: 30px 20px;
+}
+
+pre{
+    background-color: rgba(0, 0, 0, 0.9);
+    color: var(--white);
+    padding: 5px;
+    border-radius: 5px;
+}

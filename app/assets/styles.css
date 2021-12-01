@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('error.css');
+@import url('loader.css');
+@import url('posts.css');
+@import url('contact.css');
+
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Ubuntu", sans-serif;
+    --blue:#01579b;
+    --blue-2:#00b0ff;
+    --dark:#343a40;
+    --white:#e5e5e5;
+    --grey:rgba(0,0,0,.6);
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+body{
+    margin:0;
+    overflow-x: hidden;
+    background-color: var(--white);
+}
+
+a{
+    color:var(--blue);
+    transition: .3s color ease;
+    text-decoration: none;
+   
+}
+
+a:hover{
+    color:var(--blue-2);
+}
+
+h1, h2{
+    text-align: center;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.d-none{
+    display: none !important;
+}
+
+
+/* HEADER */
+.menu{
+    display: block;
+    text-align: center;
+    margin-top:30px;
+}
+.header .menu a{
+    text-decoration: none;
+    margin:10px;
+    font-size: 14px;
+    
+}
+.header .menu a.active{
+    cursor:default;
+    color:var(--blue-2);
+    font-size: 16px !important;
+    pointer-events: none;
+}
+
+#search, #main{
+    padding-top: 10px;
+    margin-top: 30px;
+}
+
+
+/* SEARCH */
+.search{
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    position: relative;
+}
+.search input{
+    width: 100%;
+    border: 2px solid var(--dark);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color:var(--dark);
+}
+.search input:focus{
+    outline: none;
+    border: 3px solid var(--blue-2);
+}
+.search button{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-color: var(--dark);
+    color: var(--white);
+    transition: right .5s ease;
+}
+.search input:focus + button{
+    top: 16px;
+    right: -22px;
+}
+

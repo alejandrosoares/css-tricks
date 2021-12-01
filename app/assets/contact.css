@@ -1,0 +1,92 @@
+
+/* CONTACT */   
+#contact{
+    background-color: white;
+    border-radius: 10px;
+    padding: .5rem;
+    width: 1200px;
+    margin: 10px auto;
+    font-size: 16px;
+}
+#contact > * {
+    display: block;
+    width: 50%;
+    margin: 10px auto;
+}
+#contact input, #contact textarea{
+    border: none;
+    border-bottom: 2px solid var(--dark);
+    padding: 5px;
+}
+#contact input:focus, #contact textarea:focus{
+    outline: none;
+    border-bottom: 3px solid var(--blue-2);
+}
+#contact button{
+    padding: 10px;
+    color:white;
+    background-color: var(--dark);
+    border: none;
+    border-radius: 10px;
+}
+.email-container{
+    position: relative;
+}
+.email-container input{
+    width: 100%;
+}
+#contact .list{
+    position: absolute;
+    top:15px;
+    right: 0;
+    display: block;
+    list-style:none;
+    padding-left: 0;
+    width: 250px;
+    font-size: 14px;
+    border-left: 1px solid #d4d4d4;
+    border-right: 1px solid #d4d4d4;
+    border-bottom: 1px solid #d4d4d4;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+   
+}
+#contact .list li{
+    border-bottom: 1px solid #d4d4d4;
+    padding:3px 10px;
+    cursor: pointer;
+}
+#contact .list li:last-child{
+    border-bottom: none;
+}
+#contact .list li.active, #contact .list li:hover{
+    font-weight: bold;
+    background-color: rgba(0,0,0,.1);
+}
+#contact .message-contact{
+    margin: 50px auto;
+}
+#contact .message-contact h2 img{
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+}
+
+@media screen and (max-width:767px){
+    #contact{
+        width: 400px;
+    } 
+}
+
+
+@media screen and (max-width:768px and min-width:991px){
+    #contact{
+        width: 600px;
+    } 
+}
+
+@media screen and (min-width:992px){
+    #contact{
+        width: 900px;
+    } 
+}
