@@ -1,35 +1,42 @@
 /* POSTS */
+:root{
+    --width-card: 300px;
+}
 #main{
     margin:1rem auto;
-    max-width: 90%;
+    max-width: 1200px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, var(--width-card));
+    gap: 5px;
+    border:1px solid red;
+    justify-content: center;
 }
 .post{
-    margin: 2px;
+    width: var(--width-card);
     background-color: white;
-    border-radius: 10px;
-    padding:10px 10px;
+    border-radius: 5px;
+    overflow: hidden;
 }
 .post .title{
     margin:10px 15px;
     display: block;
     text-align: center;
-    color:var(--dark);
+    color: var(--dark);
     font-weight: bold;
+    font-size: var(--lg);
 }
 .post img{
     display: block;
-    margin: 0 auto;
-    max-width: 280px;
-    height: auto;
-    border-radius: 10px;
+    margin: auto;
+    width: var(--width-card);
+    height: calc(var(--width-card)/1.5);
+    object-fit: cover;
 }
 .post p{
     display: flex;
     justify-content: space-between;
-    margin:2px 0 10px 10px;
-    font-size: 0.8rem;
+    margin:5px 10px;
+    font-size: var(--md);
 }
 .post p time{
     color:var(--grey);

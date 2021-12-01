@@ -5,8 +5,8 @@ export default async function request(props) {
     .then((response) =>
       response.ok ? response.json() : Promise.reject(response)
     )
-    .then((json) => cbSuccess(json))
-    .catch((error) => {
+    .then( json => cbSuccess(json))
+    .catch( error => {
       let message = error.statusText || `No mesage error`;
 
       document.getElementById("main").innerHTML = `

@@ -13,6 +13,9 @@ html{
     --dark:#343a40;
     --white:#e5e5e5;
     --grey:rgba(0,0,0,.6);
+    --lg:16px;
+    --md:14px;
+    --sm:12px:
 }
 
 *, *:before, *:after{

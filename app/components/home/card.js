@@ -1,16 +1,18 @@
+import dateToString from "../../helpers/date_to_string.js";
+
 export function Card(props){
 
     const { id, date, slug, title, _embedded } = props;
 
-    const dateFormat = new Date(date).toLocaleString();
+    const dateFormat = dateToString(date);
 
     const img = _embedded["wp:featuredmedia"]
-    ?_embedded["wp:featuredmedia"][0].source_url
-    : "app/assets/not-found.png";
+        ? _embedded["wp:featuredmedia"][0].source_url
+        : "app/assets/not-found.png";
 
     document.addEventListener("click", (e) => {
 
-        if(!e.target.matches(".post > p > a")) return false;
+        if(!e.target.matches(".post > p > .to-publication")) return false;
 
         localStorage.setItem("post-id", e.target.getAttribute("data-id"));
     });
@@ -21,7 +23,7 @@ export function Card(props){
             <span class="title">${title.rendered}</span>
             <p>
                 <time datetime="${date}">${dateFormat}</time>
-                <a href="#/${slug}" data-id="${id}">See publication</a>
+                <a href="#/${slug}" data-id="${id}" class="to-publication">See publication</a>
             </p>
         </article>
     `;
