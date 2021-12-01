@@ -7,7 +7,7 @@
     max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(auto-fit, var(--width-card));
-    gap: 5px;
+    gap: 7px;
     border:1px solid red;
     justify-content: center;
 }
@@ -16,8 +16,16 @@
     background-color: white;
     border-radius: 5px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.post .title{
+.post-image{
+    width: var(--width-card);
+    height: calc(var(--width-card)/1.5);
+    overflow: hidden;
+}
+.post-title{
     margin:10px 15px;
     display: block;
     text-align: center;
@@ -31,17 +39,35 @@
     width: var(--width-card);
     height: calc(var(--width-card)/1.5);
     object-fit: cover;
+    transition: 1s all ease;
 }
-.post p{
+.post-info{
     display: flex;
     justify-content: space-between;
     margin:5px 10px;
     font-size: var(--md);
 }
-.post p time{
+.post-info time{
     color:var(--grey);
 }
 
+.post:hover{
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+}
+
+.post:hover img{
+    transform: scale(1.1);
+}
+
+.post:hover .post-link{
+    font-weight: bold;
+}
+
+
+
+/*  IF GO TO PUBLICATION */
 .post-description{
     background-color: white;
     margin:10px auto;
@@ -77,3 +103,4 @@ pre{
     padding: 5px;
     border-radius: 5px;
 }
+

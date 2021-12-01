@@ -12,19 +12,23 @@ export function Card(props){
 
     document.addEventListener("click", (e) => {
 
-        if(!e.target.matches(".post > p > .to-publication")) return false;
+        if(!e.target.matches(".post > .to-publication")) return false;
 
         localStorage.setItem("post-id", e.target.getAttribute("data-id"));
     });
 
     return `
         <article class="post">
-            <img src="${img}" alt="${title.rendered}">
-            <span class="title">${title.rendered}</span>
-            <p>
+            <div class="post-header">
+                <div class="post-image">   
+                    <img src="${img}" alt="${title.rendered}">
+                </div>
+                <p class="post-title">${title.rendered}</p>
+            </div>
+            <div class="post-info">
                 <time datetime="${date}">${dateFormat}</time>
-                <a href="#/${slug}" data-id="${id}" class="to-publication">See publication</a>
-            </p>
+                <a href="#/${slug}" data-id="${id}" class="post-link">See publication</a>
+            </div>
         </article>
     `;
 }
