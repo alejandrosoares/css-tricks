@@ -3,6 +3,7 @@
 @import url('loader.css');
 @import url('posts.css');
 @import url('contact.css');
+@import url('search.css');
 
 html{
     box-sizing: border-box;
@@ -75,42 +76,5 @@ img{
 #search, #main{
     padding-top: 10px;
     margin-top: 30px;
-}
-
-
-/* SEARCH */
-.search{
-    text-align: center;
-    width: 40%;
-    margin: 0 auto;
-    position: relative;
-}
-.search input{
-    width: 100%;
-    border: 2px solid var(--dark);
-    padding: 5px 10px;
-    border-radius: 5px;
-    color:var(--dark);
-}
-.search input:focus{
-    outline: none;
-    border: 3px solid var(--blue-2);
-}
-.search button{
-    position: absolute;
-    top: 15px;
-    right: 10px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    background-color: var(--dark);
-    color: var(--white);
-    transition: right .5s ease;
-}
-.search input:focus + button{
-    top: 16px;
-    right: -22px;
 }
 

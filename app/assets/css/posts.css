@@ -8,7 +8,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, var(--width-card));
     gap: 7px;
-    border:1px solid red;
     justify-content: center;
 }
 .post{

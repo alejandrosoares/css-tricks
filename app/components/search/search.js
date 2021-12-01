@@ -9,8 +9,9 @@ export function Search(){
 
     input.setAttribute("type", "search");
     input.setAttribute("name", "search");
-    input.setAttribute("pĺaceholder", "Search...");
+    input.setAttribute("placeholder", "Search something of CSS");
     input.setAttribute("autocompleted", "off");
+    input.setAttribute("name", "search");
 
     button.type = "reset";
     button.textContent = "X";
