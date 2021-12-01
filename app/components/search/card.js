@@ -18,11 +18,13 @@ export function Card(props){
 
     return `
         <article class="post">
-            <span class="title">${title}</span>
-            <p>
+            <div class="post-header">
+                <p class="post-title">${title}</p>
+            </div>
+            <div class="post-info">
                 <time datetime="${date}">${dateFormat}</time>
-                <a href="#/${slug}" data-id="${id}">See publication</a>
-            </p>
+                <a href="#/${slug}" data-id="${id}" class="post-link">See publication</a>
+            </div>
         </article>
     `;
 }

@@ -9,12 +9,13 @@ export function Search(){
 
     input.setAttribute("type", "search");
     input.setAttribute("name", "search");
-    input.setAttribute("placeholder", "Search something of CSS");
+    input.setAttribute("placeholder", "Search something of CSS and press Enter");
     input.setAttribute("autocompleted", "off");
     input.setAttribute("name", "search");
 
-    button.type = "reset";
     button.textContent = "X";
+    button.classList.add("reset");
+    button.type = "reset";
 
     search.appendChild(input);
     search.appendChild(button);
@@ -34,5 +35,5 @@ export function Search(){
       location.hash = `#search?search=${input.value}`;
     });
 
-    return search;
+    return search;   
 }

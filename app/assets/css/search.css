@@ -30,6 +30,7 @@
     transition: right .5s ease;
     font-size: var(--lg);
     font-weight: bold;
+    z-index: 100;
 }
 .search input:focus + button{
     top: 16px;
