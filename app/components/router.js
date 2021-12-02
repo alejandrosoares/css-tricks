@@ -1,42 +1,29 @@
-// Sirve para generar el contenido correspondiente de la seccion
-// donde me encuentro
-
-// Se realiza la invocacion de las peticiones
-
 import api from "../helpers/wp_api.js";
 import request from "../helpers/request.js";
-import { Card as CardPost } from "./home/card.js";
+import homeCards from "./home/cards.js";
 import  Post from "./home/post.js";
 import { Card as CardSearch} from "./search/card.js";
 import Contact from "./contact/contact.js";
+import activeLink from "../helpers/active_link.js";
 
 
 export async function Router(){
 
-    const main = document.getElementById("main"),
-        links = document.querySelectorAll("nav.menu > a");
-
+    const main = document.getElementById("main");
 
     let { hash } = location;
-
-    // Remove style of link
-    links.forEach( link => link.classList.remove("active"));
 
     if(!hash){
         
         // Home
         await request({
-            url:api.POSTS,
+            url: api.POSTS,
             cbSuccess: (posts) => {
-                let postList = "";
-                posts.forEach(post => {postList += CardPost(post)});
-
-                main.innerHTML = postList;
+                main.appendChild(homeCards(posts));
             }
         })
 
-        document.querySelector(`nav.menu > a[href="#"]`)
-        .classList.add("active");
+        activeLink('');
 
     }else if(hash.includes("#search")){
     
@@ -44,18 +31,17 @@ export async function Router(){
 
         let query = localStorage.getItem("query");
 
-        document.querySelector(`nav.menu > a[href="#search"]`)
-        .classList.add("active");
+        activeLink('search');
 
         if(!query) {
             document.getElementById("loader").classList.add("d-none");
-            main.innerHTML = "<h2>Please, write anything in the above box.</h2>"; 
+            main.innerHTML = "<h2>What new CSS trick are you looking for?</h2>"; 
             document.querySelector("#search > input").focus();
             return false;
         }
 
         await request({
-            url:`${api.SEARCH}${query}`,
+            url: `${api.SEARCH}${query}`,
             cbSuccess: search => {
 
                 if(search.length > 0){
@@ -64,7 +50,7 @@ export async function Router(){
                     search.forEach(post => {
                         postList += CardSearch(post);
                     });
-
+                    main.innerHTML = "";
                     main.innerHTML = postList;
                 }else{
                     // No results
@@ -79,13 +65,12 @@ export async function Router(){
         // Contact
         main.appendChild(Contact());
 
-        document.querySelector(`nav.menu > a[href="#contact"]`)
-        .classList.add("active");
+        activeLink('contact');
     
     }else{
 
         await request({
-            url:`${api.POST}/${localStorage.getItem("post-id")}`,
+            url: `${api.POST}/${localStorage.getItem("post-id")}`,
             cbSuccess: (post) => {
                 main.innerHTML = Post(post);
             }

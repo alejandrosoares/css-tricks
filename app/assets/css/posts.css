@@ -2,9 +2,7 @@
 :root{
     --width-card: 300px;
 }
-#main{
-    margin:1rem auto;
-    max-width: 1200px;
+.posts{
     display: grid;
     grid-template-columns: repeat(auto-fit, var(--width-card));
     gap: 7px;

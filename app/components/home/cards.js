@@ -32,3 +32,16 @@ export function Card(props){
         </article>
     `;
 }
+
+export default function homeCards(posts){
+    const divContainer = document.createElement("div");
+    let postList = "";
+
+    divContainer.classList.add("posts");
+    
+    posts.forEach(post => {postList += Card(post)});
+
+    divContainer.innerHTML = postList;
+
+    return divContainer;
+}

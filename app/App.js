@@ -13,9 +13,6 @@ export function App(){
     root.appendChild(Main());
     root.appendChild(Loader());
 
-    // como en el evento haschange se ejecuta nuevamente
-    // router, entonces se realizan los cambios que
-    // estan dentro de router
     Router();
     infiniteScroll();
 }

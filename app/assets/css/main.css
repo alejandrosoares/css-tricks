@@ -18,22 +18,25 @@ html{
     --md:14px;
     --sm:12px:
 }
-
 *, *:before, *:after{
     box-sizing: inherit;
 }
-
 body{
     margin:0;
     overflow-x: hidden;
     background-color: var(--white);
 }
+#main{
+    margin: 1rem auto;
+    max-width: 1200px;
+    padding-top: 10px;
+    margin-top: 30px;
+}
 
 a{
     color:var(--blue);
     transition: .3s color ease;
-    text-decoration: none;
-   
+    text-decoration: none;  
 }
 
 a:hover{
@@ -63,18 +66,12 @@ img{
 .header .menu a{
     text-decoration: none;
     margin:10px;
-    font-size: 14px;
-    
+    font-size: 14px; 
 }
 .header .menu a.active{
     cursor:default;
     color:var(--blue-2);
     font-size: 16px !important;
     pointer-events: none;
-}
-
-#search, #main{
-    padding-top: 10px;
-    margin-top: 30px;
 }
 

@@ -2,6 +2,8 @@
     text-align: center;
     margin: 0 auto;
     position: relative;
+    padding-top: 10px;
+    margin-top: 30px;
 }
 .search input{
     width: 100%;

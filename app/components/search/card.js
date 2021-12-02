@@ -1,11 +1,12 @@
 import api from "../../helpers/wp_api.js";
+import dateToString from "../../helpers/date_to_string.js";
 
 export function Card(props){
 
     const { _embedded, id, url, title } = props;
 
-    const date =  _embedded.self[0].date,
-        dateFormat = new Date(date).toLocaleString();
+    const date = _embedded.self[0].date,
+        dateFormat = dateToString(date);
 
     const slug = url.replace("", api.DOMAIN);
 
@@ -27,4 +28,17 @@ export function Card(props){
             </div>
         </article>
     `;
+}
+
+export function Cards(posts){
+    const divContainer = document.createElement("div");
+    let postList = "";
+
+    divContainer.classList.add("posts");
+    
+    posts.forEach(post => {postList += Card(post)});
+
+    divContainer.innerHTML = postList;
+
+    return divContainer;
 }

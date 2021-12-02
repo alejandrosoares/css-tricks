@@ -7,18 +7,17 @@ export default function Contact(){
     contact.id = "contact";
     contact.classList.add("contact");
 
-    
     // Keyup event
     contact.addEventListener("keyup", e => {
 
         if(e.target.name === "email"){
             const patt = /^[a-zA-Z0-9._-]+@$/;
                 
-
             if(patt.test(e.target.value)){
                 document.querySelector("#contact ul.list")
-                .classList.remove("d-none");
+                    .classList.remove("d-none");
 
+                console.log(e)
                 switch(e.keyCode){
 
                     case 40:{
@@ -36,7 +35,6 @@ export default function Contact(){
 
                             contact.querySelector(`ul.list > li[data-index="${index}"]`)
                                 .classList.add("active");
-
                         }
                         break;
                     }
@@ -46,7 +44,7 @@ export default function Contact(){
                     
                         if(currentLi === null){
                                 contact.querySelector('ul.list > li[data-index="3"]')
-                                .classList.add("active");
+                                    .classList.add("active");
                         }else{
                             let index = parseInt(currentLi.getAttribute("data-index"));
 
@@ -74,14 +72,14 @@ export default function Contact(){
                         break;
                     }
 
-                    default:{
-
+                    default:{ 
+                        break;
                     }
                 }
 
             }else{
                 document.querySelector("#contact ul.list")
-                .classList.add("d-none"); 
+                    .classList.add("d-none"); 
             }
         }
     });
@@ -90,7 +88,7 @@ export default function Contact(){
     contact.addEventListener("submit", e =>{
 
         // Successful
-        sessionStorage.setItem("contact-visible", "off");
+        // sessionStorage.setItem("contact-visible", "off");
         contact.innerHTML = contactMessage();
 
     });
@@ -113,7 +111,7 @@ export default function Contact(){
     if(sessionStorage.getItem("contact-visible") === "on" ||
         sessionStorage.getItem("contact-visible") === null){
         contact.innerHTML = `
-            <h2>Send me you message</h2>
+            <h2>Send me your message</h2>
             <div class="email-container">
                 <input type="email" name="email" id="email" placeholder="Email" autocomplete="off">
                 <ul class="list d-none">
@@ -123,15 +121,12 @@ export default function Contact(){
                     <li data-index="3" data-value="hotmail.com">@yahoo.com</li>
                 </ul>
             </div>
-            
             <textarea name="message" id="message" cols="30" rows="5" placeholder="Write you message here..."></textarea>
             <button type="submit">Send Message</button>
         `
     }else{
         contact.innerHTML = contactMessage();
     }
-
-
 
     return contact;
 }
