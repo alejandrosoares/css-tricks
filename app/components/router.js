@@ -16,6 +16,9 @@ export async function Router(){
     if(!hash){
         
         // Home
+
+        activeLink('');
+        
         await request({
             url: api.POSTS,
             cbSuccess: (posts) => {
@@ -23,12 +26,9 @@ export async function Router(){
             }
         })
 
-        activeLink('');
-
     }else if(hash.includes("#search")){
     
         // Search
-
         let query = localStorage.getItem("query");
 
         activeLink('search');
@@ -63,9 +63,8 @@ export async function Router(){
     }else if( hash === "#contact" ){
         
         // Contact
-        main.appendChild(Contact());
-
         activeLink('contact');
+        main.appendChild(Contact()); 
     
     }else{
 

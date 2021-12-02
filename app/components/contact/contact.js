@@ -17,7 +17,7 @@ export default function Contact(){
                 document.querySelector("#contact ul.list")
                     .classList.remove("d-none");
 
-                console.log(e)
+                console.log("event ", e)
                 switch(e.keyCode){
 
                     case 40:{
@@ -88,7 +88,7 @@ export default function Contact(){
     contact.addEventListener("submit", e =>{
 
         // Successful
-        // sessionStorage.setItem("contact-visible", "off");
+        // sessionStorage.setItem("contact-visible", "off"); /* Uncomment this line */
         contact.innerHTML = contactMessage();
 
     });
