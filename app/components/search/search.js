@@ -1,5 +1,9 @@
 export function Search(){
-    
+    /*
+    Build search
+    @return: html element
+    */
+   
     const search = document.createElement("form"),
         input = document.createElement("input"),
         button = document.createElement("button");
@@ -9,13 +13,13 @@ export function Search(){
 
     input.setAttribute("type", "search");
     input.setAttribute("name", "search");
-    input.setAttribute("placeholder", "Search something of CSS and press Enter");
-    input.setAttribute("autocompleted", "off");
+    input.setAttribute("placeholder", "Search something of CSS");
+    input.setAttribute("autocomplete", "off");
     input.setAttribute("name", "search");
 
-    button.textContent = "X";
-    button.classList.add("reset");
-    button.type = "reset";
+    button.innerHTML = '<img src="app/assets/img/search.png" alt="Search" class="search-icon">';
+    button.classList.add("search-button");
+    button.type = "submit";
 
     search.appendChild(input);
     search.appendChild(button);
@@ -24,11 +28,6 @@ export function Search(){
         input.value = localStorage.getItem("query");
     }
 
-    button.addEventListener("click", e =>{
-        localStorage.removeItem("query");
-    })
-
-    // Submit event
     search.addEventListener("submit", e =>{
       e.preventDefault();
       localStorage.setItem("query", input.value);

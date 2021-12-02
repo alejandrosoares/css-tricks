@@ -2,13 +2,17 @@ import api from "../../helpers/wp_api.js";
 import dateToString from "../../helpers/date_to_string.js";
 
 export function Card(props){
-
+    /*
+    Buil card that go inside the div.posts
+    @param: object
+    @return: str
+    */
+   
     const { _embedded, id, url, title } = props;
 
     const date = _embedded.self[0].date,
-        dateFormat = dateToString(date);
-
-    const slug = url.replace("", api.DOMAIN);
+        dateFormat = dateToString(date),
+        slug = url.replace("", api.DOMAIN);
 
     document.addEventListener("click", (e) => {
 
@@ -30,15 +34,28 @@ export function Card(props){
     `;
 }
 
-export function Cards(posts){
+export default function searchCards(posts){
+    /*
+    Buil div.posts and return it
+    @param: object
+    @return: html element 
+    */
+
     const divContainer = document.createElement("div");
-    let postList = "";
 
     divContainer.classList.add("posts");
-    
-    posts.forEach(post => {postList += Card(post)});
 
-    divContainer.innerHTML = postList;
+    if(posts.length > 0){
+        // Results
+        let postList = "";
+
+        posts.forEach(post => {postList += Card(post)});
+
+        divContainer.innerHTML = postList;
+    }else{
+        // No results
+        divContainer.innerHTML = `<h2>Results not found with <b>${query}</b>.</h2>`; 
+    }
 
     return divContainer;
 }

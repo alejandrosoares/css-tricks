@@ -8,20 +8,16 @@
 .search input{
     width: 100%;
     border: 2px solid var(--dark);
-    padding: 10px 15px;
+    padding: 10px 40px 10px 15px;
     border-radius: 20px;
     color:var(--dark);
     font-style: italic;
-}
-.search input:focus{
-    outline: none;
-    border: 3px solid var(--blue-2);
-    font-style: normal;
+    transition: .3s all ease;
 }
 .search button{
     position: absolute;
     top: 15px;
-    right: 8px;
+    right: 6px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -29,14 +25,24 @@
     height: 30px;
     background-color: var(--dark);
     color: var(--white);
-    transition: right .5s ease;
+    transition: .5s all ease;
     font-size: var(--lg);
     font-weight: bold;
-    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search input:focus{
+    outline: none;
+    border: 2px solid var(--blue-2);
+    font-style: normal;
 }
 .search input:focus + button{
-    top: 16px;
-    right: -32px;
+    background-color: var(--blue-2);
+    top: 15px;
+}
+.search-icon{
+    max-width: 16px;
 }
 
 @media screen and (max-width:575px){

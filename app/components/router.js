@@ -1,10 +1,11 @@
 import api from "../helpers/wp_api.js";
 import request from "../helpers/request.js";
+import activeLink from "../helpers/active_link.js";
+import showLoader from "../helpers/loader.js";
 import homeCards from "./home/cards.js";
 import  Post from "./home/post.js";
-import { Card as CardSearch} from "./search/card.js";
+import searchCards, { Card as CardSearch} from "./search/cards.js";
 import Contact from "./contact/contact.js";
-import activeLink from "../helpers/active_link.js";
 
 
 export async function Router(){
@@ -14,21 +15,18 @@ export async function Router(){
     let { hash } = location;
 
     if(!hash){
-        
         // Home
 
         activeLink('');
         
         await request({
             url: api.POSTS,
-            cbSuccess: (posts) => {
-                main.appendChild(homeCards(posts));
-            }
+            cbSuccess: posts => { main.appendChild(homeCards(posts)) }
         })
 
     }else if(hash.includes("#search")){
-    
         // Search
+
         let query = localStorage.getItem("query");
 
         activeLink('search');
@@ -42,39 +40,22 @@ export async function Router(){
 
         await request({
             url: `${api.SEARCH}${query}`,
-            cbSuccess: search => {
-
-                if(search.length > 0){
-                    // Results
-                    let postList = "";
-                    search.forEach(post => {postList += CardSearch(post)});
-                    
-                    main.innerHTML = "";
-                    main.innerHTML = postList;
-                }else{
-                    // No results
-                    main.innerHTML = "<h2>Results not found.</h2>"; 
-                }
-                
-            }
+            cbSuccess: posts => { main.appendChild(searchCards(posts)) }
         })
 
     }else if( hash === "#contact" ){
-        
         // Contact
+
         activeLink('contact');
         main.appendChild(Contact()); 
-    
     }else{
 
         await request({
             url: `${api.POST}/${localStorage.getItem("post-id")}`,
-            cbSuccess: (post) => {
-                main.innerHTML = Post(post);
-            }
+            cbSuccess: post => { main.innerHTML = Post(post) }
         })
         
     }
     
-    document.getElementById("loader").classList.add("d-none");
+    showLoader(false);
 }

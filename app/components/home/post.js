@@ -1,9 +1,10 @@
-/*
-To See publication
-*/
-
 export default function Post(props){
-    
+    /*
+    Buil the structure of post detail
+    @param: object
+    @return: str
+    */
+   
    const { content, date, title } = props;
 
     return `

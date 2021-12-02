@@ -1,11 +1,14 @@
 const formatMinutes = (min) => {
-
-    let m = min.toString();
-
-    return (m.length === 1)? `0${m}`: m;
+    /*
+    Format minutes, if is 6 return 06
+    @param: int
+    @return: str
+    */
+   
+    return (min < 10)? `0${min}`: `${min}`;
 }
 
-const dateToString = (date) => {
+export default function dateToString(date){
     /*
     Receive date with format 2021-11-30T09:26:35
     and return date with format 30.11.2021 9:26
@@ -23,6 +26,3 @@ const dateToString = (date) => {
 
     return dateString;
 }
-
-
-export default dateToString;

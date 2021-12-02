@@ -12,11 +12,14 @@ html{
     --blue:#01579b;
     --blue-2:#00b0ff;
     --dark:#343a40;
-    --white:#e5e5e5;
+    --white: #fff;
+    --gray:#e5e5e5;
     --grey:rgba(0,0,0,.6);
+    --x-lg:18px;
     --lg:16px;
     --md:14px;
-    --sm:12px:
+    --sm:12px;
+    --border: 1px;
 }
 *, *:before, *:after{
     box-sizing: inherit;
@@ -24,7 +27,7 @@ html{
 body{
     margin:0;
     overflow-x: hidden;
-    background-color: var(--white);
+    background-color: var(--gray);
 }
 #main{
     margin: 1rem auto;
@@ -69,9 +72,8 @@ img{
     font-size: 14px; 
 }
 .header .menu a.active{
-    cursor:default;
+    cursor: pointer;
     color:var(--blue-2);
     font-size: 16px !important;
-    pointer-events: none;
 }
 

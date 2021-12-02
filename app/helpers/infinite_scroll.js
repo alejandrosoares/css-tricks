@@ -1,17 +1,20 @@
 import api from "./wp_api.js";
 import request from "./request.js";
+import showLoader from "./loader.js";
 import { Card as CardPost } from "../components/home/cards.js";
-import { Card as CardSearch } from "../components/search/card.js";
+import { Card as CardSearch } from "../components/search/cards.js";
+
 
 export async function infiniteScroll(){
-    let query = localStorage.getItem("query"),
-    apiUrl,
-    Component;
 
-    window.addEventListener("scroll", async (e) =>{
+    window.addEventListener("scroll", async (e) => {
 
-        let { scrollTop, clientHeight, scrollHeight} = document.documentElement;
-        let { hash } = location;
+        let query = localStorage.getItem("query"),
+            apiUrl,
+            Component,
+            { hash } = location;
+
+        let { scrollTop, clientHeight, scrollHeight } = document.documentElement;
 
         if(scrollTop + clientHeight >= scrollHeight){
             api.page++;
@@ -23,25 +26,24 @@ export async function infiniteScroll(){
             }else if(hash.includes("#search")){
                 // Search
                 apiUrl = `${api.SEARCH}${query}&page=${api.page}`;
-                Component = CardSearch;
+                Component = CardSearch; 
             }else{
                 return false;
             }
 
-            document.getElementById("loader")
-                .classList.remove("d-none");
+            showLoader(true);
 
             await request({
                 url: apiUrl,
                 cbSuccess: (posts) => {
+                    const postsContainer = document.querySelector("main .posts");
                     let html = "";
+
                     posts.forEach(post => html += Component(post));
 
-                    document.getElementById("main")
-                        .insertAdjacentHTML("beforeend", html);
+                    postsContainer.insertAdjacentHTML("beforeend", html);
 
-                    document.getElementById("loader")
-                        .classList.add("d-none");
+                    showLoader(false);
                 }
             });
 
