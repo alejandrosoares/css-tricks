@@ -34,7 +34,7 @@ export async function Router(){
         activeLink('search');
 
         if(!query) {
-            document.getElementById("loader").classList.add("d-none");
+
             main.innerHTML = "<h2>What new CSS trick are you looking for?</h2>"; 
             document.querySelector("#search > input").focus();
             return false;
@@ -47,9 +47,8 @@ export async function Router(){
                 if(search.length > 0){
                     // Results
                     let postList = "";
-                    search.forEach(post => {
-                        postList += CardSearch(post);
-                    });
+                    search.forEach(post => {postList += CardSearch(post)});
+                    
                     main.innerHTML = "";
                     main.innerHTML = postList;
                 }else{
