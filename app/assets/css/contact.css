@@ -35,13 +35,20 @@
 .contact-button{
     color:var(--white);
     background-color: var(--dark);
-    padding: 10px;
     font-size: var(--lg);
     font-weight: bold;
+    height: 36px;
+    line-height: var(--lg);
 }
 .contact-button:hover{
     background-color:var(--blue-2);
     border: 2px solid var(--blue-2);
+    
+}
+.contact-button:focus{
+    background-color:var(--blue-2);
+    border: 2px solid var(--blue-2);
+    outline: none;
 }
 
 /* contact message */
@@ -58,40 +65,22 @@
     margin-right: 5px;
 }
 
-/* 
-.contact-email{
-    position: relative;
+.contact-button-loader{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-left: 10px;
+    color: white;
 }
-.contact-email .list{
-    position: absolute;
-    top:15px;
-    right: 3px;
-    background-color: var(--white);
-    display: block;
-    list-style: none;
-    padding-left: 0;
-    width: 250px;
-    font-size: 14px;
-    border-left: 1px solid #d4d4d4;
-    border-right: 1px solid #d4d4d4;
-    border-bottom: 1px solid #d4d4d4;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    z-index: 100;
-}
-#contact .list li{
-    border-bottom: 1px solid #d4d4d4;
-    padding:3px 10px;
-    cursor: pointer;
-}
-#contact .list li:last-child{
-    border-bottom: none;
-}
-#contact .list li.active, #contact .list li:hover{
-    font-weight: bold;
-    background-color: rgba(0,0,0,.1);
-} */
 
+.contact-button-disabled{
+    pointer-events: none;
+    display: flex;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+}
 
 /* @media screen and (max-width:767px){
     #contact{

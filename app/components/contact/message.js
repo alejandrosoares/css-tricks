@@ -1,8 +1,21 @@
-export default function contactMessage(){
+export default function contactMessage(response){
+   
+    const contact = document.getElementById("contact");
 
-    return `
-        <div class="contact-message">
-            <h2><img src="app/assets/img/check.png" alt="Icon"> Your messsage has been send successful</h2>
-        </>
-    `
+    if(response.success === "true"){
+    
+        contact.innerHTML = `
+            <div class="contact-message">
+                <h2><img src="app/assets/img/check.png" alt="Icon"> Your messsage has been send successful</h2>
+            </div>
+        `
+        sessionStorage.setItem("contact-visible", "off"); 
+
+    }else{
+        contact.innerHTML = `
+            <div class="contact-message">
+                <h2><img src="app/assets/img/fail.png" alt="Icon"> Something went wrong. <br> Please, reload page and try again.</h2>
+            </div>
+        `
+    }
 }

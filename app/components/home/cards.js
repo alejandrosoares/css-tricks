@@ -47,7 +47,10 @@ export default function homeCards(posts){
     const divContainer = document.createElement("div");
     let postList = "";
 
-    posts.forEach(post => {postList += Card(post)});
+    posts.forEach(post => {
+        console.log(post);
+        postList += Card(post)
+    });
 
     divContainer.classList.add("posts");
     divContainer.innerHTML = postList;

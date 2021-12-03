@@ -10,7 +10,8 @@ import Contact from "./contact/contact.js";
 
 export async function Router(){
 
-    const main = document.getElementById("main");
+    const main = document.getElementById("main"),
+        options = {};
 
     let { hash } = location;
 
@@ -21,7 +22,8 @@ export async function Router(){
         
         await request({
             url: api.POSTS,
-            cbSuccess: posts => { main.appendChild(homeCards(posts)) }
+            cbSuccess: posts => { main.appendChild(homeCards(posts)) },
+            options
         })
 
     }else if(hash.includes("#search")){
@@ -40,7 +42,8 @@ export async function Router(){
 
         await request({
             url: `${api.SEARCH}${query}`,
-            cbSuccess: posts => { main.appendChild(searchCards(posts)) }
+            cbSuccess: posts => { main.appendChild(searchCards(posts)) },
+            options
         })
 
     }else if( hash === "#contact" ){

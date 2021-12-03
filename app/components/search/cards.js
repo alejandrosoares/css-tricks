@@ -49,7 +49,10 @@ export default function searchCards(posts){
         // Results
         let postList = "";
 
-        posts.forEach(post => {postList += Card(post)});
+        posts.forEach(post => {
+            console.log(post);
+            postList += Card(post)
+        });
 
         divContainer.innerHTML = postList;
     }else{

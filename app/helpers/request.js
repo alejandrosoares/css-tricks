@@ -25,12 +25,12 @@ export default async function request(props){
     @param: object - with url and call back function.
   */
 
-  let { url, cbSuccess } = props;
+  let { url, cbSuccess, options } = props;
 
-  await fetch(url)
+  await fetch(url, options)
     .then( response =>
       response.ok ? response.json() : Promise.reject(response)
     )
-    .then( json => cbSuccess(json))
+    .then( json => cbSuccess(json) )
     .catch( error => messageError(error));
 }
