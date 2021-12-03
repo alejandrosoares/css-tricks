@@ -1,4 +1,4 @@
-// Vars for communicate with wordpress API
+// Vars to communicate with the wordpress API
 
 const NAME = "css-tricks",
     DOMAIN = `https://${NAME}.com`,

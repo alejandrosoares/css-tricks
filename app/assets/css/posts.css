@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
 /* POSTS */
 :root{
     --width-card: 300px;
@@ -62,42 +64,66 @@
     font-weight: bold;
 }
 
+.post-figure{
+    width: var(--width-card);
+    height: calc(var(--width-card)/1.5);
+    background-color: var(--black);
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-family: 'Bubblegum Sans', cursive;
+}
 
 
-/*  IF GO TO PUBLICATION */
+
+/*  POST DESCRIPTION */
 .post-description{
     background-color: white;
     margin:10px auto;
     border-radius: 10px;
-    max-width: 1200px;
-    padding: 0.5rem;
+    max-width: 800px;;
+    padding:0;
+    overflow: hidden;
 }
-
-.post-description aside h2{
-    text-align: center;
+.post-description-img{
+    width: 100%;
+    max-height: 300px;
 }
-
-.post-description aside time{
-    color:var(--grey);
+.post-description-img img{
+    width: 100%;
+    max-height: 300px;
+}
+.post-description-title{
+    position: relative;
+}
+.post-description-title h2{
+    max-width: 80%;
+    min-width: 50%;
+    border-radius: 5px;
+    padding: 5px;
+    margin: auto;
+}
+.post-description div time{
+    color: rgba(0, 0, 0, 0.6);
     font-size: 14px;
+    position: absolute;
+    right: 5px;
+    top: 0px;
 }
-
-.post-description hr{
-    border: 0;
-    height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    width: 90%;
-}
-
 .post-description article{
     margin: 30px 20px;
 }
-
 pre{
-    background-color: rgba(0, 0, 0, 0.9);
-    color: var(--white);
-    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffefcd;
+    padding: 10px;
     border-radius: 5px;
+    overflow-x: scroll;
+}
+code{
+    display: block;
+    min-width: 100%;
 }
 

@@ -15,6 +15,8 @@ export async function Router(){
 
     let { hash } = location;
 
+    console.log("hash ", hash);
+
     if(!hash){
         // Home
 
@@ -37,6 +39,9 @@ export async function Router(){
 
             main.innerHTML = "<h2>What new CSS trick are you looking for?</h2>"; 
             document.querySelector("#search > input").focus();
+            
+            showLoader(false);
+
             return false;
         }
 
@@ -52,10 +57,13 @@ export async function Router(){
         activeLink('contact');
         main.appendChild(Contact()); 
     }else{
-
+        // Geta post
         await request({
             url: `${api.POST}/${localStorage.getItem("post-id")}`,
-            cbSuccess: post => { main.innerHTML = Post(post) }
+            cbSuccess: post => { 
+                console.log("post detail ", post);
+                main.innerHTML = Post(post) 
+            }
         })
         
     }

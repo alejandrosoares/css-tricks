@@ -6,7 +6,7 @@ function messageError(error){
     @param: object
   */
  
-  let message = error.statusText || `No message error`;
+  let message = error.statusText || `No error message`;
 
   document.getElementById("main").innerHTML = `
         <div class="error">
@@ -32,5 +32,5 @@ export default async function request(props){
       response.ok ? response.json() : Promise.reject(response)
     )
     .then( json => cbSuccess(json) )
-    .catch( error => messageError(error));
+    //.catch( error => messageError(error));
 }

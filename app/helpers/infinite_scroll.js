@@ -36,8 +36,10 @@ export async function infiniteScroll(){
             await request({
                 url: apiUrl,
                 cbSuccess: (posts) => {
-                    const postsContainer = document.querySelector("main .posts");
+                    const postsContainer = document.querySelector("#main .posts");
                     let html = "";
+
+                    console.log(postsContainer);
 
                     posts.forEach(post => html += Component(post));
 

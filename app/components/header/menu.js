@@ -5,9 +5,9 @@ export function Menu(){
     menu.classList.add("menu");
 
     menu.innerHTML = `
-        <a href="#" class="active">Home</a>
-        <a href="#search">Search</a>
-        <a href="#contact">Contact</a>
+        <a class="link" href="#" class="active">Home</a>
+        <a class="link" href="#search">Search</a>
+        <a class="link" href="#contact">Contact</a>
     `;
 
     return menu;

@@ -16,7 +16,7 @@ export function Card(props){
 
     document.addEventListener("click", (e) => {
 
-        if(!e.target.matches(".post > p > a")) return false;
+        if(!e.target.matches(".post .post-link")) return false;
 
         localStorage.setItem("post-id", e.target.getAttribute("data-id"));
     });
@@ -24,6 +24,9 @@ export function Card(props){
     return `
         <article class="post">
             <div class="post-header">
+                <div class="post-figure">   
+                    <span>CSS</span>
+                </div>
                 <p class="post-title">${title}</p>
             </div>
             <div class="post-info">
@@ -33,6 +36,7 @@ export function Card(props){
         </article>
     `;
 }
+
 
 export default function searchCards(posts){
     /*
