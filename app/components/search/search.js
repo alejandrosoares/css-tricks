@@ -25,13 +25,15 @@ export function Search(){
     search.appendChild(button);
 
     if(location.hash.includes("#search")){
-        input.value = localStorage.getItem("query");
+        input.value = sessionStorage.getItem("query");
     }
 
     search.addEventListener("submit", e =>{
+      
+        sessionStorage.setItem("query", input.value);
+        location.hash = `#search?search=${input.value}`;
+
       e.preventDefault();
-      localStorage.setItem("query", input.value);
-      location.hash = `#search?search=${input.value}`;
     });
 
     return search;   
