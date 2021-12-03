@@ -4,6 +4,7 @@ import { Main } from "./components/main.js";
 import { Loader } from "./components/loader.js";
 import { Router } from "./components/router.js";
 import { infiniteScroll } from "./helpers/infinite_scroll.js";
+import { userSettings } from "./components/header/user_settings.js";
 
 export function App(){
     const root = document.getElementById("root");
@@ -15,4 +16,5 @@ export function App(){
 
     Router();
     infiniteScroll();
+    userSettings();
 }

@@ -1,0 +1,47 @@
+  
+.conf{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+.conf-container{
+    position: relative;
+}
+.conf-icon{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--white);
+    border: 1px solid rgba( 0, 0, 0, .1);
+    cursor: pointer;
+}
+.conf-icon img{
+    max-width: 24px;
+}
+.conf-options {
+    position: absolute;
+    top: 32px;
+    right: -5px;
+    width: 160px;
+    background-color: var(--white);
+    border-radius: 5px;
+    border: 1px solid rgba( 0, 0, 0, .1);
+}
+.conf-options > div:not(:last-child) {
+    border-bottom: 1px solid rgba( 0, 0, 0, .1);
+}
+.conf-options > div:first-child {
+    margin-top: 5px;
+}
+.conf-options > div:last-child {
+    margin-bottom: 5px;
+}
+.fast-mode, .dark-mode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}

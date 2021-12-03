@@ -6,8 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./app/assets/css/main.css">
     <title>SPA</title>
+
+    <style>
+  
+        .conf{
+            position: absolute;
+            top: 0px;
+            right: 10px;
+        }
+        .conf-container{
+            position: relative;
+        }
+        .conf-icon{
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: var(--white);
+            border: 1px solid rgba( 0, 0, 0, .1);
+            cursor: pointer;
+        }
+        .conf-icon img{
+            max-width: 24px;
+        }
+        .conf-options {
+            position: absolute;
+            top: 32px;
+            right: -5px;
+            width: 160px;
+            background-color: var(--white);
+            /* padding: 10px; */
+            border-radius: 5px;
+            border: 1px solid rgba( 0, 0, 0, .1);
+        }
+        .conf-options > div:not(:last-child) {
+            border-bottom: 1px solid rgba( 0, 0, 0, .1);
+        }
+        .conf-options > div:first-child {
+            margin-top: 5px;
+        }
+        .conf-options > div:last-child {
+            margin-bottom: 5px;
+        }
+        .fast-mode, .dark-mode {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+        .switch-title {
+            margin-left: 12px;
+            font-size: var(--md);
+        }
+    </style>
 </head>
 <body>
+    <div class="conf">
+        <div class="conf-container">
+            <div class="conf-icon" data-status="hide">
+                <img src="app/assets/img/conf.png" alt="Config Icon">
+            </div>
+            <div class="conf-options d-none">
+                <div class="fast-mode">
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="switch-title">Fast mode</span>
+                </div>
+                <div class="dark-mode">
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="switch-title">Dark mode</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="root"></div>
     <script src="./app/index.js" type="module"></script>
 </body>

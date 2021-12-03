@@ -22,11 +22,9 @@ export async function infiniteScroll(){
             if(hash === ""){
                 // Home
                 apiUrl = `${api.POSTS}&page=${api.page}`;
-                Component = CardPost;
             }else if(hash.includes("#search")){
                 // Search
                 apiUrl = `${api.SEARCH}${query}&page=${api.page}`;
-                Component = CardSearch; 
             }else{
                 return false;
             }
@@ -39,10 +37,14 @@ export async function infiniteScroll(){
                     const postsContainer = document.querySelector("#main .posts");
                     let html = "";
 
-                    console.log(postsContainer);
+                    if(hash === ""){
+                        const fastMode = localStorage.getItem('fast-mode') || "false";
 
-                    posts.forEach(post => html += Component(post));
-
+                        posts.forEach(post => html += CardPost(post, fastMode));
+                    }else{
+                        posts.forEach(post => html += CardSearch(post));
+                    }
+                
                     postsContainer.insertAdjacentHTML("beforeend", html);
 
                     showLoader(false);

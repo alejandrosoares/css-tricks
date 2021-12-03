@@ -15,8 +15,6 @@ export async function Router(){
 
     let { hash } = location;
 
-    console.log("hash ", hash);
-
     if(!hash){
         // Home
 

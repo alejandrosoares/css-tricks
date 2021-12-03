@@ -4,6 +4,8 @@
 @import url('posts.css');
 @import url('contact.css');
 @import url('search.css');
+@import url('switch.css');
+@import url('user_conf.css');
 
 html{
     box-sizing: border-box;
@@ -29,6 +31,7 @@ body{
     overflow-x: hidden;
     background-color: var(--white-light);
     font-family: 'Roboto', sans-serif;
+    position: relative;
 }
 #main{
     margin: 1rem auto;
