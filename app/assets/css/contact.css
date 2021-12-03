@@ -30,7 +30,7 @@
 .contact-email > input:focus, 
 .contact-msg:focus{
     outline: none;
-    border: 2px solid var(--blue-2);
+    border: 2px solid var(--blue-hover);
 }
 .contact-button{
     color:var(--white);
@@ -41,13 +41,12 @@
     line-height: var(--lg);
 }
 .contact-button:hover{
-    background-color:var(--blue-2);
-    border: 2px solid var(--blue-2);
-    
+    background-color: var(--blue-hover);
+    border: 2px solid var(--blue-hover);
 }
 .contact-button:focus{
-    background-color:var(--blue-2);
-    border: 2px solid var(--blue-2);
+    background-color:var(--blue-hover);
+    border: 2px solid var(--blue-hover);
     outline: none;
 }
 
