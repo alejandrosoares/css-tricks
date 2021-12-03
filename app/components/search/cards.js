@@ -1,5 +1,7 @@
 import api from "../../helpers/wp_api.js";
 import dateToString from "../../helpers/date_to_string.js";
+import classNumberIterator from "../../helpers/get_number_class.js";
+
 
 export function Card(props){
     /*
@@ -12,7 +14,8 @@ export function Card(props){
 
     const date = _embedded.self[0].date,
         dateFormat = dateToString(date),
-        slug = url.replace("", api.DOMAIN);
+        slug = url.replace("", api.DOMAIN),
+        postClass = `post-figure-${classNumberIterator.next().value}`;
 
     document.addEventListener("click", (e) => {
 
@@ -21,10 +24,12 @@ export function Card(props){
         localStorage.setItem("post-id", e.target.getAttribute("data-id"));
     });
 
+
+
     return `
         <article class="post">
             <div class="post-header">
-                <div class="post-figure">   
+                <div class="post-figure ${postClass}">   
                     <span>CSS</span>
                 </div>
                 <p class="post-title">${title}</p>
