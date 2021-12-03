@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemon&family=Roboto:wght@300;400&display=swap');
 @import url('error.css');
 @import url('loader.css');
 @import url('posts.css');
@@ -10,17 +10,16 @@ html{
     font-size: 16px;
     font-family: "Ubuntu", sans-serif;
     --blue:#01579b;
-    --blue-2:#00b0ff;
+    --blue-hover:#00b0ff;
     --dark:#343a40;
     --white: #fff;
-    --gray:#e5e5e5;
-    --grey:rgba(0,0,0,.6);
+    --white-light:#e5e5e5;
+    --gray: rgba(0,0,0,.4);
     --black:#1a1728;
     --x-lg:18px;
     --lg:16px;
     --md:14px;
     --sm:12px;
-    --border: 1px;
 }
 *, *:before, *:after{
     box-sizing: inherit;
@@ -28,8 +27,8 @@ html{
 body{
     margin:0;
     overflow-x: hidden;
-    background-color: var(--gray);
-    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--white-light);
+    font-family: 'Roboto', sans-serif;
 }
 #main{
     margin: 1rem auto;
@@ -45,11 +44,17 @@ a{
 }
 
 a:hover{
-    color:var(--blue-2);
+    color:var(--blue-hover);
 }
 
-h1, h2{
+h1{
     text-align: center;
+    font-family: 'Lemon', cursive;
+}
+
+h2{
+    text-align: center;
+    font-weight: 400;
 }
 
 img{
@@ -62,7 +67,7 @@ img{
 }
 
 
-/* HEADER */
+/* MENU */
 .menu{
     display: block;
     text-align: center;
@@ -71,11 +76,12 @@ img{
 .header .menu a{
     text-decoration: none;
     margin:10px;
-    font-size: 14px; 
+    font-size: 14px;
+    font-weight: 400; 
 }
 .header .menu a.active{
     cursor: pointer;
-    color: var(--blue-2);
+    color: var(--blue-hover);
     font-size: 16px !important;
 }
 

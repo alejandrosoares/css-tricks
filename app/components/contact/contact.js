@@ -39,7 +39,7 @@ export default function Contact(){
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-                name: "SPA CSS TRICKS",
+                name: "SPA - CSS TRICKS",
                 email,
                 message
             })
@@ -71,7 +71,7 @@ export default function Contact(){
                 <div class="contact-email">
                     <input type="email" name="email" class="email" placeholder="Email" autocomplete="off" required>
                 </div>
-                <textarea name="message" class="contact-msg" placeholder="Write you message here..." required></textarea>
+                <textarea name="message" class="contact-msg" placeholder="Write you message here..." minlength="10" required></textarea>
                 <button type="submit" class="contact-button">Send message</button>
             </div>
         `

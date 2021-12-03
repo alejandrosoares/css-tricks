@@ -11,7 +11,6 @@
     padding: 10px 40px 10px 15px;
     border-radius: 20px;
     color:var(--dark);
-    font-style: italic;
     transition: .3s all ease;
 }
 .search button{
@@ -34,11 +33,11 @@
 }
 .search input:focus{
     outline: none;
-    border: 2px solid var(--blue-2);
+    border: 2px solid var(--blue-hover);
     font-style: normal;
 }
 .search input:focus + button{
-    background-color: var(--blue-2);
+    background-color: var(--blue-hover);
     top: 15px;
 }
 .search-icon{
