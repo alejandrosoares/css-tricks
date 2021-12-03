@@ -3,7 +3,7 @@
 #contact{
     display: block;
     width: 100%;
-    background-color: var(--gray);
+    background-color: var(--white-light);
     border-radius: 5px;
     padding: .5rem;
     font-size: var(--lg);

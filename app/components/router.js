@@ -31,13 +31,17 @@ export async function Router(){
     }else if(hash.includes("#search")){
         // Search
 
-        let query = localStorage.getItem("query");
+        let query = sessionStorage.getItem("query");
 
         activeLink('search');
 
         if(!query) {
 
-            main.innerHTML = "<h2>What new CSS trick are you looking for?</h2>"; 
+            main.innerHTML = `
+                <div class="posts">
+                    <h2>What new CSS trick are you looking for?</h2>
+                </div>
+                `; 
             document.querySelector("#search > input").focus();
             
             showLoader(false);
@@ -60,10 +64,7 @@ export async function Router(){
         // Geta post
         await request({
             url: `${api.POST}/${localStorage.getItem("post-id")}`,
-            cbSuccess: post => { 
-                console.log("post detail ", post);
-                main.innerHTML = Post(post) 
-            }
+            cbSuccess: post => { main.innerHTML = Post(post) }
         })
         
     }
