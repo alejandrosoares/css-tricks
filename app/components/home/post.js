@@ -7,13 +7,16 @@ export default function Post(props){
     @return: str
     */
    
-    const { content, date, title, featured_media_src_url } = props;
+    const { content, date, title, featured_media_src_url, link} = props;
 
     const dateFormat = dateToString(date);
 
     return `
         <section class="post-description">
             <div class="post-description-img">
+                <a href="${link}" title="View publication in Css Tricks" class="post-external-link">
+                    <img src="app/assets/img/external.png" alt="View Icon">
+                </a>
                 <img src="${featured_media_src_url}">
             </div>
             <div class="post-description-title">
