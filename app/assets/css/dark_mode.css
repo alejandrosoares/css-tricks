@@ -1,0 +1,34 @@
+.body-dark-mode {
+    background-color: var(--dark) !important;
+}
+
+.header-dark-mode a {
+    color: var(--white);
+}
+.header-dark-mode a:hover{
+    color: var(--blue-hover) !important;
+}
+
+/* CONTACT */
+.contact-dark-mode {
+    background-color: var(--dark) !important;
+}
+.contact-dark-mode .contact-title {
+    color: var(--white) !important;
+}
+
+.contact-dark-mode .contact-button {
+    background-color: var(--white) !important;
+    color: var(--dark) ;
+}
+
+.contact-dark-mode .contact-button:hover{
+    background-color: var(--blue-hover) !important;
+    color: var(--white);
+}
+
+
+/* USER CONFIG */
+.conf-dark-mode .conf-icon:hover{
+    border: 1px solid rgba( 255, 255, 255, .1);
+} 

@@ -5,6 +5,16 @@ import { Card as CardPost } from "../components/home/cards.js";
 import { Card as CardSearch } from "../components/search/cards.js";
 
 
+function verifyIfH2Exists(postsContainer){
+    /*
+    Remove h2 if it exists
+    @param: div.posts
+    */
+    const h2 =  postsContainer.querySelector("h2");
+
+    if(h2) h2.remove();
+}
+
 export async function infiniteScroll(){
 
     window.addEventListener("scroll", async (e) => {
@@ -42,11 +52,18 @@ export async function infiniteScroll(){
 
                         posts.forEach(post => html += CardPost(post, fastMode));
                     }else{
+                        
+                        // If the request takes time and the section is changed,
+                        // then postsContainer is null
+                        if(postsContainer) verifyIfH2Exists(postsContainer);
+
                         posts.forEach(post => html += CardSearch(post));
                     }
-                
-                    postsContainer.insertAdjacentHTML("beforeend", html);
 
+                    // If the request takes time and the section is changed,
+                    // then postsContainer is null
+                    if(postsContainer) postsContainer.insertAdjacentHTML("beforeend", html); 
+                        
                     showLoader(false);
                 }
             });
