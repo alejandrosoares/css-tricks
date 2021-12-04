@@ -29,8 +29,9 @@ export async function Router(){
     }else if(hash.includes("#search")){
         // Search
 
-        let query = sessionStorage.getItem("query");
-
+        const input  = document.querySelector("#search > input"),
+            query = input.value;
+            
         showLoader(true);
         activeLink('search');
 
@@ -41,7 +42,7 @@ export async function Router(){
                     <h2>What new CSS trick are you looking for?</h2>
                 </div>
                 `; 
-            document.querySelector("#search > input").focus();
+            input.focus();
             
             showLoader(false);
 

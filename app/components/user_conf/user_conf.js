@@ -26,8 +26,6 @@ function darkMode(active){
         iconConf = conf.querySelector(".conf-icon img"),
         header = document.querySelector('.header'),
         contact = document.getElementById("contact");
-
-    console.log("darkMode() -> contact ", contact);
     
     if(active){
         body.classList.add('body-dark-mode');
@@ -78,7 +76,6 @@ function hideUserConf(){
         iconDiv.setAttribute('data-status', "hide");
     }
 }
-
 
 function showUserConf(){
     const iconDiv = document.querySelector('.conf-icon'),

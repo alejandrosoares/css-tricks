@@ -20,7 +20,7 @@
 }
 .contact-dark-mode .contact-button {
     background-color: var(--white) !important;
-    color: var(--dark) ;
+    color: var(--dark);
 }
 .contact-dark-mode .contact-button:hover{
     background-color: var(--blue-hover) !important;

@@ -24,16 +24,10 @@ export function Search(){
     search.appendChild(input);
     search.appendChild(button);
 
-    if(location.hash.includes("#search")){
-        input.value = sessionStorage.getItem("query");
-    }
-
     search.addEventListener("submit", e =>{
-      
-        sessionStorage.setItem("query", input.value);
+    
         location.hash = `#search?search=${input.value}`;
-
-      e.preventDefault();
+        e.preventDefault();
     });
 
     return search;   
