@@ -16,7 +16,7 @@ export function Card(props, fastMode){
         : "app/assets/not-found.png";
     
     
-    document.addEventListener("click", (e) => {
+    document.addEventListener("click", e => {
 
         if(!e.target.matches(".post .post-link")) return false;
 

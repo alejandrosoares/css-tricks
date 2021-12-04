@@ -1,6 +1,6 @@
 
 /* CONTACT */   
-#contact{
+#contact {
     display: block;
     width: 100%;
     background-color: var(--white-light);
@@ -9,14 +9,14 @@
     font-size: var(--lg);
     margin: 5px auto;
 }
-.contact-header, .contact-body{
+.contact-header, .contact-body {
     display: block;
     width: 50%;
     margin: 10px auto;
 }
 .contact-email > input, 
 .contact-msg, 
-.contact-button{
+.contact-button {
     border: 2px solid var(--dark);
     padding: 5px;
     margin: 5px 0;
@@ -24,15 +24,15 @@
     display: block;
     width: 100%;
 }
-.contact-msg{
+.contact-msg {
     min-height: 80px;
 }
 .contact-email > input:focus, 
-.contact-msg:focus{
+.contact-msg:focus {
     outline: none;
     border: 2px solid var(--blue-hover);
 }
-.contact-button{
+.contact-button {
     color:var(--white);
     background-color: var(--dark);
     font-size: var(--lg);
@@ -40,31 +40,31 @@
     height: 36px;
     line-height: var(--lg);
 }
-.contact-button:hover{
+.contact-button:hover {
     background-color: var(--blue-hover);
     border: 2px solid var(--blue-hover);
 }
-.contact-button:focus{
+.contact-button:focus {
     background-color:var(--blue-hover);
     border: 2px solid var(--blue-hover);
     outline: none;
 }
 
 /* contact message */
-.contact-message{
+.contact-message {
     width: 50%;
     margin: 50px auto;
     padding: 50px;
     border-radius: 5px;
     background-color: var(--white);
 }
-.contact-message h2 img{
+.contact-message h2 img {
     width: 20px;
     height: auto;
     margin-right: 5px;
 }
 
-.contact-button-loader{
+.contact-button-loader {
     display: inline-block;
     width: 22px;
     height: 22px;
@@ -72,7 +72,7 @@
     color: white;
 }
 
-.contact-button-disabled{
+.contact-button-disabled {
     pointer-events: none;
     display: flex;
     height: 36px;
@@ -82,17 +82,17 @@
 }
 
 @media screen and (max-width:767px){
-    .contact-body{
+    .contact-body {
         width: 90%;
     } 
 }
 @media screen and (min-width:768px) and (max-width:991px){
-    .contact-body{
+    .contact-body {
         width: 70%;
     }  
 }
 @media screen and (min-width:992px){
-    .contact-body{
+    .contact-body {
         width: 50%;
     }  
 }

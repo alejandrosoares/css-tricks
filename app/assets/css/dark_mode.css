@@ -1,7 +1,9 @@
 .body-dark-mode {
     background-color: var(--dark) !important;
 }
-
+.body-dark-mode h2 {
+    color: var(--white);
+}
 .header-dark-mode a {
     color: var(--white);
 }
@@ -16,12 +18,10 @@
 .contact-dark-mode .contact-title {
     color: var(--white) !important;
 }
-
 .contact-dark-mode .contact-button {
     background-color: var(--white) !important;
     color: var(--dark) ;
 }
-
 .contact-dark-mode .contact-button:hover{
     background-color: var(--blue-hover) !important;
     color: var(--white);

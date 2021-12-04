@@ -57,6 +57,8 @@ function loadDarkMode(){
 const loadUserSettings = () => {
     window.addEventListener('click', e => {
 
+        console.log(e.target);
+
         // click in btn of conf
         if(e.target.matches('.conf-icon *')){
             const iconDiv = e.target.closest('.conf-icon'),
@@ -64,6 +66,8 @@ const loadUserSettings = () => {
                 parentDiv = iconDiv.parentNode,
                 confOptions = parentDiv.querySelector('.conf-options');
             
+            console.log(status);
+
             if(status === "hide"){
                 confOptions.classList.remove('d-none');
                 iconDiv.setAttribute('data-status', "show");
@@ -95,7 +99,7 @@ const loadUserSettings = () => {
             const fastModeDiv = e.target.closest('.fast-mode'),
                 input = fastModeDiv.querySelector('input[type="checkbox"]');
 
-                fastMode(input.checked);
+            fastMode(input.checked);
         }
 
         // Click in dark mode
@@ -103,7 +107,7 @@ const loadUserSettings = () => {
             const darkModeDiv = e.target.closest('.dark-mode'),
                 input = darkModeDiv.querySelector('input[type="checkbox"]');
 
-                darkMode(input.checked);
+            darkMode(input.checked);
         }
     })
 
