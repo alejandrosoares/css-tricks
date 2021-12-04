@@ -31,11 +31,11 @@ export async function Router(){
 
         const input  = document.querySelector("#search > input"),
             query = input.value;
-            
+
         showLoader(true);
         activeLink('search');
 
-        if(!query){
+        if(!query || query === ""){
 
             main.innerHTML = `
                 <div class="posts">
