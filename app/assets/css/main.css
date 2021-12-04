@@ -8,6 +8,7 @@
 @import url('switch.css');
 @import url('user_conf.css');
 @import url('dark_mode.css');
+@import url('footer.css');
 
 html {
     box-sizing: border-box;
@@ -27,15 +28,22 @@ html {
 }
 *, *:before, *:after {
     box-sizing: inherit;
+    padding: 0;
+    margin: 0;
 }
 body {
     margin:0;
+    padding: 0;
     overflow-x: hidden;
     background-color: var(--white-light);
     font-family: 'Roboto', sans-serif;
     position: relative;
 }
 
+#root{
+    position: relative;
+    height: 100vh;
+}
 
 #main {
     margin: 1rem auto;
@@ -80,6 +88,7 @@ img {
     text-align: center;
     margin-top:30px;
 }
+
 .header .menu a {
     text-decoration: none;
     margin:10px;

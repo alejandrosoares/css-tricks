@@ -1,13 +1,11 @@
-export function Title(){
+export function Footer(){
 
-    const title = document.createElement("h1");
+    const footer = document.createElement("div");
 
-    title.innerHTML = `
-        <div class="title">
-            <a href="${api.DOMAIN}" target="_blank" rel="noopener">
-                ${api.NAME.toUpperCase()}
-            </a>
-        </div>
+    footer.classList.add("footer")
+
+    footer.innerHTML = `
+        <div> Icons from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     `
-    return title;
+    return footer;
 }

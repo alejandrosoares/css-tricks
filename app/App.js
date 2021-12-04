@@ -1,6 +1,7 @@
 import { Header } from "./components/header/header.js";
 import { Main } from "./components/main.js";
 import { Loader } from "./components/loader.js";
+import { Footer } from "./components/footer/footer.js";
 import { Router } from "./components/router.js";
 import { infiniteScroll } from "./helpers/infinite_scroll.js";
 import { userConf, loadUserSettings } from "./components/user_conf/user_conf.js";
@@ -16,6 +17,7 @@ export function App(){
     root.appendChild(Header());
     root.appendChild(Main());
     root.appendChild(Loader());
+    root.appendChild(Footer());
 
     infiniteScroll();
     loadUserSettings();
