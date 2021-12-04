@@ -31,9 +31,10 @@ export async function Router(){
 
         let query = sessionStorage.getItem("query");
 
+        showLoader(true);
         activeLink('search');
 
-        if(!query) {
+        if(!query){
 
             main.innerHTML = `
                 <div class="posts">

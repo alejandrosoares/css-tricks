@@ -32,5 +32,5 @@ export default async function request(props){
       response.ok ? response.json() : Promise.reject(response)
     )
     .then( json => cbSuccess(json) )
-    //.catch( error => messageError(error));
+    .catch( error => messageError(error));
 }

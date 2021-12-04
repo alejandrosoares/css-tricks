@@ -3,7 +3,6 @@
 #contact {
     display: block;
     width: 100%;
-    background-color: var(--white-light);
     border-radius: 5px;
     padding: .5rem;
     font-size: var(--lg);
@@ -69,7 +68,7 @@
     width: 22px;
     height: 22px;
     margin-left: 10px;
-    color: white;
+    color: var(--white);
 }
 
 .contact-button-disabled {

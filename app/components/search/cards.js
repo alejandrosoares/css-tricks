@@ -24,8 +24,6 @@ export function Card(props){
         localStorage.setItem("post-id", e.target.getAttribute("data-id"));
     });
 
-
-
     return `
         <article class="post">
             <div class="post-header">

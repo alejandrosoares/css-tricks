@@ -9,7 +9,7 @@ function* getClassNumber(){
     while(true){
         yield i;
 
-        if (i === maxNumberClass ) i = 0;
+        if (i === maxNumberClass) i = 0;
 
         i++;
     }   

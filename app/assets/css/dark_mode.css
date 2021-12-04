@@ -32,3 +32,9 @@
 .conf-dark-mode .conf-icon:hover{
     border: 1px solid rgba( 255, 255, 255, .1);
 } 
+
+
+/* Fix h2 of post description */
+.post-description-title h2{
+    color: var(--dark) !important;
+}
