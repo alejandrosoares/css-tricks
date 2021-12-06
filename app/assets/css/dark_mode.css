@@ -26,7 +26,6 @@
     background-color: var(--blue-hover) !important;
     color: var(--white);
 }
-
 .contact-dark-mode .contact-message h2 {
     color: var(--dark);
 }
@@ -41,7 +40,6 @@
 .post-description-title h2{
     color: var(--dark) !important;
 }
-
 
 .footer-dark-mode {
     color: var(--white) !important;

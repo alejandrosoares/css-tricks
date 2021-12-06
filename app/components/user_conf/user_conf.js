@@ -1,5 +1,4 @@
 import verifyDarkMode from "../../helpers/verify_dark_mode.js";
-
 import { darkMode, loadDarkMode } from "./dark-mode.js";
 import { fastMode, loadFastMode } from "./fast-mode.js";
 

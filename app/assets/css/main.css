@@ -7,8 +7,8 @@
 @import url('search.css');
 @import url('switch.css');
 @import url('user_conf.css');
-@import url('dark_mode.css');
 @import url('footer.css');
+@import url('dark_mode.css');
 
 html {
     box-sizing: border-box;
@@ -40,7 +40,7 @@ body {
     position: relative;
 }
 
-#root{
+#root {
     position: relative;
     height: 100vh;
 }
