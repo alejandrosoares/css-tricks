@@ -18,7 +18,7 @@ html {
    --blue-hover: #00b0ff;
    --dark: #343a40;
    --white: #fff;
-   --white-light: #e5e5e5;
+   --white-light: #fafafa;
    --gray: rgba(0, 0, 0, 0.4);
    --black: #1a1728;
    --x-lg: 18px;
@@ -29,7 +29,7 @@ html {
 *,
 *:before,
 *:after {
-   box-sizing: inherit;
+   box-sizing: border-box;
    padding: 0;
    margin: 0;
 }

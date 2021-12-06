@@ -19,6 +19,7 @@
    flex-direction: column;
    justify-content: space-between;
    z-index: 50;
+   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 .post-image {
    width: var(--width-card);
