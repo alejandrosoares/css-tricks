@@ -1,4 +1,9 @@
-import verifyFastMode from "../../helpers/verify_fast_mode.js";
+function verifyFastMode(){
+
+    const fastMode = localStorage.getItem("fast-mode");
+
+    return (fastMode === "true")? true: false;
+}
 
 function fastMode(active){
     /*

@@ -44,3 +44,8 @@
 .footer-dark-mode {
     color: var(--white) !important;
 }
+
+
+.error-dark-mode {
+    color: var(--white);
+}

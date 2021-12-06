@@ -1,4 +1,11 @@
-import verifyDarkMode from "../../helpers/verify_dark_mode.js";
+import global from "../../helpers/global.js";
+
+function verifyDarkMode(){
+
+    const darkMode = localStorage.getItem("dark-mode");
+
+    return (darkMode === "true")? true: false;
+}
 
 function clearClass(selector){
 
@@ -62,6 +69,7 @@ function loadDarkMode(){
         : input.checked = false;
 
     darkMode(activate);
+    global.DARK_MODE = activate;
 }
 
 export { darkMode, loadDarkMode };

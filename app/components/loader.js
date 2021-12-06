@@ -1,12 +1,11 @@
-import verifyDarkMode from "../helpers/verify_dark_mode.js";
-
+import global from "../helpers/global.js";
 
 export function Loader(){
 
     const loader = document.createElement("img");
 
     loader.id = "loader";
-    loader.src = (verifyDarkMode())
+    loader.src = (global.DARK_MODE)
         ? "app/assets/img/loader-white.svg"
         : "app/assets/img/loader.svg";
 

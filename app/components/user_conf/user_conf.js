@@ -1,4 +1,4 @@
-import verifyDarkMode from "../../helpers/verify_dark_mode.js";
+import global from "../../helpers/global.js";
 import { darkMode, loadDarkMode } from "./dark-mode.js";
 import { fastMode, loadFastMode } from "./fast-mode.js";
 
@@ -41,8 +41,6 @@ function loadUserConf(){
                 (status === "hide")
                     ? showUserConf()
                     : hideUserConf();
-                
-                e.stopPropagation();
             }else{
                 // click in fast mode switch
                 if(e.target.matches('.fast-mode .switch *')){
@@ -50,16 +48,12 @@ function loadUserConf(){
                         input = fastModeDiv.querySelector('input[type="checkbox"]');
 
                     fastMode(input.checked);
-                    e.stopPropagation();
                 }else{
                     if(e.target.matches('.dark-mode .switch *')){
                         const darkModeDiv = e.target.closest('.dark-mode'),
                             input = darkModeDiv.querySelector('input[type="checkbox"]');
             
                         darkMode(input.checked);
-                        e.stopPropagation();
-            
-                        console.log("dark mode");
                     }else{
                         return false;
                     }
@@ -79,9 +73,7 @@ function loadUserConf(){
 function userConf(){
 
     const conf = document.createElement("div"),
-        imagePath = (verifyDarkMode())
-            ? "app/assets/img/conf-white.png"
-            : "app/assets/img/conf.png";
+        imagePath = (global.DARK_MODE)? "app/assets/img/conf-white.png": "app/assets/img/conf.png";
 
     conf.classList.add("conf");
 

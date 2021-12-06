@@ -1,3 +1,4 @@
+import global from "./global.js";
 import showLoader from "./loader.js";
 
 function messageError(error){
@@ -8,8 +9,13 @@ function messageError(error){
  
   let message = error.statusText || `No error message`;
 
+  let divClasses = "error";
+
+  if(global.DARK_MODE){
+    divClasses = divClasses + " error-dark-mode";
+  }
   document.getElementById("main").innerHTML = `
-        <div class="error">
+        <div class="${divClasses}">
             <p class="title">A happened one error</p>
             <p>Status: ${error.status}</p>
             <p>Message: ${message}</p>
