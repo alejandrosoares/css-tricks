@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   color: var(--dark);
-  font-size: 14px;
+  font-size: 13px;
   z-index: 10;
 }
 

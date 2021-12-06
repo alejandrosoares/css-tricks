@@ -27,6 +27,9 @@
     color: var(--white);
 }
 
+.contact-dark-mode .contact-message h2 {
+    color: var(--dark);
+}
 
 /* USER CONFIG */
 .conf-dark-mode .conf-icon:hover{
