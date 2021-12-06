@@ -6,7 +6,7 @@ export function Title(){
 
     title.innerHTML = `
         <div class="title">
-            <a href="${api.DOMAIN}" target="_blank" rel="noopener">
+            <a href="${api.DOMAIN}" target="_blank" rel="noopener" title="Go to ${api.DOMAIN}">
                 ${api.NAME.toUpperCase()}
             </a>
         </div>
