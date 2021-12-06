@@ -40,8 +40,8 @@ export default function Contact(){
             },
             body: JSON.stringify({
                 name: "SPA - CSS TRICKS",
-                email,
-                message
+                email: email.value,
+                message: message.value
             })
         }
 
