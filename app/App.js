@@ -4,7 +4,7 @@ import { Loader } from "./components/loader.js";
 import { Footer } from "./components/footer/footer.js";
 import { Router } from "./components/router.js";
 import { infiniteScroll } from "./helpers/infinite_scroll.js";
-import { userConf, loadUserSettings } from "./components/user_conf/user_conf.js";
+import { userConf, loadUserConf } from "./components/user_conf/user_conf.js";
 
 export function App(){
     /*
@@ -20,7 +20,7 @@ export function App(){
     root.appendChild(Footer());
 
     infiniteScroll();
-    loadUserSettings();
+    loadUserConf();
     MainApp();
 }
 

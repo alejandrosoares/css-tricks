@@ -1,72 +1,8 @@
 import verifyDarkMode from "../../helpers/verify_dark_mode.js";
-import verifyFastMode from "../../helpers/verify_fast_mode.js";
 
-function fastMode(active){
-    /*
-    Set in localstorage and reload page
-    @param: bool
-    */
+import { darkMode, loadDarkMode } from "./dark-mode.js";
+import { fastMode, loadFastMode } from "./fast-mode.js";
 
-    localStorage.setItem('fast-mode', active);
-    location.reload();
-}
-
-function darkMode(active){
-    /*
-    Set in localstorage and add or remove the dark styles 
-    of the elements
-    @param: bool
-    */
-
-    localStorage.setItem('dark-mode', active);
-
-    // elements where applied dark mode
-    const body = document.querySelector('body'),
-        conf = document.querySelector(".conf"),
-        iconConf = conf.querySelector(".conf-icon img"),
-        header = document.querySelector('.header'),
-        contact = document.getElementById("contact"),
-        footer = document.querySelector(".footer");
-    
-    if(active){
-        body.classList.add('body-dark-mode');
-        conf.classList.add('conf-dark-mode');
-        header.classList.add('header-dark-mode');
-        footer.classList.add('footer-dark-mode');
-        if(contact) contact.classList.add('contact-dark-mode');
-        
-        iconConf.setAttribute("src", "app/assets/img/conf-white.png");
-    }else{
-        body.classList.remove('body-dark-mode');
-        conf.classList.remove('conf-dark-mode');
-        header.classList.remove('header-dark-mode');
-        footer.classList.remove('footer-dark-mode');
-        if(contact)  contact.classList.remove('contact-dark-mode');
-        
-        // change icon of user conf
-        iconConf.setAttribute("src", "app/assets/img/conf.png");
-    }
-}
-
-function loadFastMode(){
-    const activate = verifyFastMode(),
-        input = document.querySelector('.fast-mode input[type="checkbox"]');
-
-    (activate)
-        ? input.checked = true
-        : input.checked = false;
-}
-
-function loadDarkMode(){
-    const activate = verifyDarkMode(),
-        input = document.querySelector('.dark-mode input[type="checkbox"]');
-
-    (activate)
-        ? input.checked = true
-        : input.checked = false;
-
-    darkMode(activate);
-}
 
 function hideUserConf(){
     const iconDiv = document.querySelector('.conf-icon'),
@@ -92,7 +28,7 @@ function showUserConf(){
     }
 }
 
-export const loadUserSettings = () => {
+function loadUserConf(){
 
     document.addEventListener('click', e => {
 
@@ -141,7 +77,7 @@ export const loadUserSettings = () => {
     
 }
 
-export function userConf(){
+function userConf(){
 
     const conf = document.createElement("div"),
         imagePath = (verifyDarkMode())
@@ -183,3 +119,6 @@ export function userConf(){
     `;
     return conf;
 }
+
+
+export { userConf, loadUserConf };
