@@ -6,33 +6,33 @@ import { Router } from "./components/router.js";
 import { infiniteScroll } from "./helpers/infinite_scroll.js";
 import { userConf, loadUserConf } from "./components/user_conf/user_conf.js";
 
-export function App(){
-    /*
-    Only loads the contents of the sections
+export function App() {
+   /*
+    Load all content
     */
-    const root = document.getElementById("root");
-    
-    root.innerHTML =  null;
-    root.appendChild(userConf());
-    root.appendChild(Header());
-    root.appendChild(Main());
-    root.appendChild(Loader());
-    root.appendChild(Footer());
+   const root = document.getElementById("root");
 
-    infiniteScroll();
-    loadUserConf();
-    MainApp();
+   root.innerHTML = null;
+   root.appendChild(userConf());
+   root.appendChild(Header());
+   root.appendChild(Main());
+   root.appendChild(Loader());
+   root.appendChild(Footer());
+
+   infiniteScroll();
+   loadUserConf();
+   MainApp();
 }
 
-export function MainApp(){
-    /*
+export function MainApp() {
+   /*
     Only loads the contents of the sections 
     through Router
     */
-    
-    const main = document.getElementById("main");
 
-    main.innerHTML = "";
-    
-    Router();
+   const main = document.getElementById("main");
+
+   main.innerHTML = "";
+
+   Router();
 }

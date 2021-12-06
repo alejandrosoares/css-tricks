@@ -3,71 +3,71 @@ import request from "../helpers/request.js";
 import activeLink from "../helpers/active_link.js";
 import showLoader from "../helpers/loader.js";
 import homeCards from "./home/cards.js";
-import  Post from "./home/post.js";
-import searchCards, { Card as CardSearch} from "./search/cards.js";
+import Post from "./home/post.js";
+import searchCards, { Card as CardSearch } from "./search/cards.js";
 import Contact from "./contact/contact.js";
 
+export async function Router() {
+   const main = document.getElementById("main"),
+      options = {};
 
-export async function Router(){
+   let { hash } = location;
 
-    const main = document.getElementById("main"),
-        options = {};
+   if (!hash) {
+      // Home
 
-    let { hash } = location;
+      activeLink("");
 
-    if(!hash){
-        // Home
+      await request({
+         url: api.POSTS,
+         cbSuccess: (posts) => {
+            main.appendChild(homeCards(posts));
+         },
+         options,
+      });
+   } else if (hash.includes("#search")) {
+      // Search
 
-        activeLink('');
-        
-        await request({
-            url: api.POSTS,
-            cbSuccess: posts => { main.appendChild(homeCards(posts)) },
-            options
-        })
+      const input = document.querySelector("#search > input"),
+         query = input.value;
 
-    }else if(hash.includes("#search")){
-        // Search
+      showLoader(true);
+      activeLink("search");
 
-        const input  = document.querySelector("#search > input"),
-            query = input.value;
-
-        showLoader(true);
-        activeLink('search');
-
-        if(!query || query === ""){
-
-            main.innerHTML = `
+      if (!query || query === "") {
+         main.innerHTML = `
                 <div class="posts">
                     <h2>What new CSS trick are you looking for?</h2>
                 </div>
-                `; 
-            input.focus();
-            
-            showLoader(false);
+                `;
+         input.focus();
 
-            return false;
-        }
+         showLoader(false);
 
-        await request({
-            url: `${api.SEARCH}${query}`,
-            cbSuccess: posts => { main.appendChild(searchCards(posts)) },
-            options
-        })
+         return false;
+      }
 
-    }else if( hash === "#contact" ){
-        // Contact
+      await request({
+         url: `${api.SEARCH}${query}`,
+         cbSuccess: (posts) => {
+            main.appendChild(searchCards(posts));
+         },
+         options,
+      });
+   } else if (hash === "#contact") {
+      // Contact
 
-        activeLink('contact');
-        main.appendChild(Contact()); 
-    }else{
-        // Geta post
-        await request({
-            url: `${api.POST}/${localStorage.getItem("post-id")}`,
-            cbSuccess: post => { main.innerHTML = Post(post) }
-        })
-        
-    }
-    
-    showLoader(false);
+      activeLink("contact");
+      main.appendChild(Contact());
+   } else {
+      // Geta post
+      await request({
+         url: `${api.POST}/${localStorage.getItem("post-id")}`,
+         cbSuccess: (post) => {
+            main.innerHTML = Post(post);
+         },
+      });
+   }
+
+   showLoader(false);
 }

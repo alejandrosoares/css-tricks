@@ -2,82 +2,82 @@ import global from "../../helpers/global.js";
 import { setDarkModeStatus, loadDarkMode } from "./dark-mode.js";
 import { setFastModeStatus, loadFastMode } from "./fast-mode.js";
 
+function hideUserConf() {
+   const iconDiv = document.querySelector(".conf-icon"),
+      status = iconDiv.getAttribute("data-status");
 
-function hideUserConf(){
-    const iconDiv = document.querySelector('.conf-icon'),
-        status = iconDiv.getAttribute("data-status");
-        
-    if(status === "show"){
-        const confOptions = document.querySelector('.conf-options');
+   if (status === "show") {
+      const confOptions = document.querySelector(".conf-options");
 
-        confOptions.classList.add('d-none');
-        iconDiv.setAttribute('data-status', "hide");
-    }
+      confOptions.classList.add("d-none");
+      iconDiv.setAttribute("data-status", "hide");
+   }
 }
 
-function showUserConf(){
-    const iconDiv = document.querySelector('.conf-icon'),
-        status = iconDiv.getAttribute("data-status");
-        
-    if(status === "hide"){
-        const confOptions = document.querySelector('.conf-options');
+function showUserConf() {
+   const iconDiv = document.querySelector(".conf-icon"),
+      status = iconDiv.getAttribute("data-status");
 
-        confOptions.classList.remove('d-none');
-        iconDiv.setAttribute('data-status', "show");
-    }
+   if (status === "hide") {
+      const confOptions = document.querySelector(".conf-options");
+
+      confOptions.classList.remove("d-none");
+      iconDiv.setAttribute("data-status", "show");
+   }
 }
 
-function loadUserConf(){
+function loadUserConf() {
+   document.addEventListener("click", (e) => {
+      // click in conf
+      if (e.target.matches(".conf *")) {
+         if (e.target.matches(".conf-icon *")) {
+            const iconDiv = e.target.closest(".conf-icon"),
+               status = iconDiv.getAttribute("data-status");
 
-    document.addEventListener('click', e => {
+            status === "hide" ? showUserConf() : hideUserConf();
+         } else {
+            // click in fast mode switch
+            if (e.target.matches(".fast-mode .switch *")) {
+               const fastModeDiv = e.target.closest(".fast-mode"),
+                  input = fastModeDiv.querySelector('input[type="checkbox"]');
 
-        // click in conf
-        if(e.target.matches('.conf *')){
+               setFastModeStatus(input.checked);
+            } else {
+               if (e.target.matches(".dark-mode .switch *")) {
+                  const darkModeDiv = e.target.closest(".dark-mode"),
+                     input = darkModeDiv.querySelector(
+                        'input[type="checkbox"]'
+                     );
 
-            if(e.target.matches('.conf-icon *')){
-                const iconDiv = e.target.closest('.conf-icon'),
-                    status = iconDiv.getAttribute("data-status");
-
-                (status === "hide")
-                    ? showUserConf()
-                    : hideUserConf();
-            }else{
-                // click in fast mode switch
-                if(e.target.matches('.fast-mode .switch *')){
-                    const fastModeDiv = e.target.closest('.fast-mode'),
-                        input = fastModeDiv.querySelector('input[type="checkbox"]');
-
-                    setFastModeStatus(input.checked);
-                }else{
-                    if(e.target.matches('.dark-mode .switch *')){
-                        const darkModeDiv = e.target.closest('.dark-mode'),
-                            input = darkModeDiv.querySelector('input[type="checkbox"]');
-            
-                        setDarkModeStatus(input.checked);
-                    }else{
-                        return false;
-                    }
-                }
+                  setDarkModeStatus(input.checked);
+               } else {
+                  return false;
+               }
             }
-        }else{
-            // click in other element
-            hideUserConf();
-        }
-    })
+         }
+      } else {
+         // click in other element
+         hideUserConf();
+      }
+   });
 
-    loadFastMode();
-    loadDarkMode();
-    
+   loadFastMode();
+   loadDarkMode();
 }
 
-function userConf(){
+function userConf() {
+   /*
+    Build the component with options of settings for user
+    @return: html element
+    */
+   const conf = document.createElement("div"),
+      imagePath = global.DARK_MODE
+         ? "app/assets/img/conf-white.png"
+         : "app/assets/img/conf.png";
 
-    const conf = document.createElement("div"),
-        imagePath = (global.DARK_MODE)? "app/assets/img/conf-white.png": "app/assets/img/conf.png";
+   conf.classList.add("conf");
 
-    conf.classList.add("conf");
-
-    conf.innerHTML = `
+   conf.innerHTML = `
         <div class="conf-container">
             <div class="conf-icon" data-status="hide">
                 <img src="${imagePath}" alt="Config Icon">
@@ -108,8 +108,7 @@ function userConf(){
             </div>
         </div>
     `;
-    return conf;
+   return conf;
 }
-
 
 export { userConf, loadUserConf };

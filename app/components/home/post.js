@@ -1,17 +1,17 @@
 import dateToString from "../../helpers/date_to_string.js";
 
-export default function Post(props){
-    /*
+export default function Post(props) {
+   /*
     Buil the structure of post detail
     @param: object
     @return: str
     */
-   
-    const { content, date, title, featured_media_src_url, link} = props;
 
-    const dateFormat = dateToString(date);
+   const { content, date, title, featured_media_src_url, link } = props;
 
-    return `
+   const dateFormat = dateToString(date);
+
+   return `
         <section class="post-description">
             <div class="post-description-img">
                 <a href="${link}" title="View publication in Css Tricks" class="post-external-link">

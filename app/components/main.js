@@ -1,8 +1,11 @@
-export function Main(props){
+export function Main() {
+   /*
+    Build the main element
+    @return: html element
+    */
+   const main = document.createElement("main");
 
-    const main = document.createElement("main");
+   main.id = "main";
 
-    main.id = "main";
-
-    return main;
+   return main;
 }

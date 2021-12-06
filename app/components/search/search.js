@@ -1,34 +1,34 @@
-export function Search(){
-    /*
-    Build search
+export function Search() {
+   /*
+    Build the search element
     @return: html element
     */
-   
-    const search = document.createElement("form"),
-        input = document.createElement("input"),
-        button = document.createElement("button");
-    
-    search.id = "search";
-    search.classList.add("search");
 
-    input.setAttribute("type", "search");
-    input.setAttribute("name", "search");
-    input.setAttribute("placeholder", "Search something of CSS");
-    input.setAttribute("autocomplete", "off");
-    input.setAttribute("name", "search");
+   const search = document.createElement("form"),
+      input = document.createElement("input"),
+      button = document.createElement("button");
 
-    button.innerHTML = '<img src="app/assets/img/search.png" alt="Search" class="search-icon">';
-    button.classList.add("search-button");
-    button.type = "submit";
+   search.id = "search";
+   search.classList.add("search");
 
-    search.appendChild(input);
-    search.appendChild(button);
+   input.setAttribute("type", "search");
+   input.setAttribute("name", "search");
+   input.setAttribute("placeholder", "Search something of CSS");
+   input.setAttribute("autocomplete", "off");
+   input.setAttribute("name", "search");
 
-    search.addEventListener("submit", e =>{
-    
-        location.hash = `#search?search=${input.value}`;
-        e.preventDefault();
-    });
+   button.innerHTML =
+      '<img src="app/assets/img/search.png" alt="Search" class="search-icon">';
+   button.classList.add("search-button");
+   button.type = "submit";
 
-    return search;   
+   search.appendChild(input);
+   search.appendChild(button);
+
+   search.addEventListener("submit", (e) => {
+      location.hash = `#search?search=${input.value}`;
+      e.preventDefault();
+   });
+
+   return search;
 }
