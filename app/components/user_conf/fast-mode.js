@@ -1,28 +1,27 @@
-function verifyFastMode(){
+import global from "../../helpers/global.js";
 
-    const fastMode = localStorage.getItem("fast-mode");
+function getFastModeStatus(){
+    const local =  localStorage.getItem("fast-mode");
 
-    return (fastMode === "true")? true: false;
+    if(local === "true"){
+        global.FAST_MODE = true;
+        return true;
+    }
+
+    global.FAST_MODE = false;
+    return false;
 }
 
-function fastMode(active){
-    /*
-    Set in localstorage and reload page
-    @param: bool
-    */
+function setFastModeStatus(active){
 
     localStorage.setItem('fast-mode', active);
-    location.reload();
+    global.FAST_MODE = active;
 }
-
 
 function loadFastMode(){
-    const activate = verifyFastMode(),
-        input = document.querySelector('.fast-mode input[type="checkbox"]');
+    const input = document.querySelector('.fast-mode input[type="checkbox"]');
 
-    (activate)
-        ? input.checked = true
-        : input.checked = false;
+    input.checked = getFastModeStatus();
 }
 
-export { fastMode, loadFastMode };
+export { setFastModeStatus, loadFastMode };

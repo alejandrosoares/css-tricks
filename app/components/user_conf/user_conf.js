@@ -1,6 +1,6 @@
 import global from "../../helpers/global.js";
-import { darkMode, loadDarkMode } from "./dark-mode.js";
-import { fastMode, loadFastMode } from "./fast-mode.js";
+import { setDarkModeStatus, loadDarkMode } from "./dark-mode.js";
+import { setFastModeStatus, loadFastMode } from "./fast-mode.js";
 
 
 function hideUserConf(){
@@ -47,13 +47,13 @@ function loadUserConf(){
                     const fastModeDiv = e.target.closest('.fast-mode'),
                         input = fastModeDiv.querySelector('input[type="checkbox"]');
 
-                    fastMode(input.checked);
+                    setFastModeStatus(input.checked);
                 }else{
                     if(e.target.matches('.dark-mode .switch *')){
                         const darkModeDiv = e.target.closest('.dark-mode'),
                             input = darkModeDiv.querySelector('input[type="checkbox"]');
             
-                        darkMode(input.checked);
+                        setDarkModeStatus(input.checked);
                     }else{
                         return false;
                     }

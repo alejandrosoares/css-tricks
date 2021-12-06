@@ -1,10 +1,22 @@
 import global from "../../helpers/global.js";
 
-function verifyDarkMode(){
+function setDarkMode(active){
 
-    const darkMode = localStorage.getItem("dark-mode");
+    localStorage.setItem("dark-mode", active);
+    global.DARK_MODE = active;
+}
 
-    return (darkMode === "true")? true: false;
+function getDarkModeStatus(){
+
+    const local =  localStorage.getItem("dark-mode");
+
+    if(local === "true"){
+        global.DARK_MODE = true;
+        return true;
+    }
+
+    global.DARK_MODE = false;
+    return false;
 }
 
 function clearClass(selector){
@@ -26,7 +38,7 @@ function addStyle(add, selectorsList){
     })
 }
 
-function darkMode(active){
+function setDarkModeStatus(active){
     /*
     Set in localstorage and add or remove the dark styles 
     of the elements
@@ -34,8 +46,6 @@ function darkMode(active){
     */
 
     const iconConf = document.querySelector(".conf-icon img");
-
-    localStorage.setItem('dark-mode', active);
 
     if(active){
         // Adding dark-mode styles
@@ -57,19 +67,17 @@ function darkMode(active){
             addStyle(false, [ ".contact" ]);
         }, 200)
     }
+
+    setDarkMode(active);
 }
 
 
 function loadDarkMode(){
-    const activate = verifyDarkMode(),
-        input = document.querySelector('.dark-mode input[type="checkbox"]');
+    const input = document.querySelector('.dark-mode input[type="checkbox"]'),
+        active = getDarkModeStatus();
 
-    (activate)
-        ? input.checked = true
-        : input.checked = false;
-
-    darkMode(activate);
-    global.DARK_MODE = activate;
+    input.checked = active;
+    setDarkModeStatus(active);
 }
 
-export { darkMode, loadDarkMode };
+export { setDarkModeStatus, loadDarkMode };
