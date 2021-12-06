@@ -25,19 +25,22 @@ function darkMode(active){
         conf = document.querySelector(".conf"),
         iconConf = conf.querySelector(".conf-icon img"),
         header = document.querySelector('.header'),
-        contact = document.getElementById("contact");
+        contact = document.getElementById("contact"),
+        footer = document.querySelector(".footer");
     
     if(active){
         body.classList.add('body-dark-mode');
         conf.classList.add('conf-dark-mode');
         header.classList.add('header-dark-mode');
+        footer.classList.add('footer-dark-mode');
         if(contact) contact.classList.add('contact-dark-mode');
         
         iconConf.setAttribute("src", "app/assets/img/conf-white.png");
     }else{
         body.classList.remove('body-dark-mode');
-        conf.classList.add('conf-dark-mode');
+        conf.classList.remove('conf-dark-mode');
         header.classList.remove('header-dark-mode');
+        footer.classList.remove('footer-dark-mode');
         if(contact)  contact.classList.remove('contact-dark-mode');
         
         // change icon of user conf
