@@ -1,55 +1,55 @@
 .conf {
-  position: absolute;
-  top: 5px;
-  right: 10px;
+   position: absolute;
+   top: 5px;
+   right: 10px;
 }
 .conf-container {
-  position: relative;
+   position: relative;
 }
 .conf-icon {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  cursor: pointer;
+   width: 32px;
+   height: 32px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   cursor: pointer;
 }
 .conf-icon:hover {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .conf-icon img {
-  max-width: 24px;
-  transition: 0.5s all ease;
+   max-width: 24px;
+   transition: 0.5s all ease;
 }
 .conf-icon:hover img {
-  transform: rotate(25deg);
+   transform: rotate(25deg);
 }
 .conf-options {
-  position: absolute;
-  top: 32px;
-  right: -5px;
-  width: 160px;
-  background-color: var(--white);
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+   position: absolute;
+   top: 32px;
+   right: -5px;
+   width: 160px;
+   background-color: var(--white);
+   border-radius: 5px;
+   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .conf-options > div:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .conf-options > div:first-child {
-  margin-top: 5px;
+   margin-top: 5px;
 }
 .conf-options > div:last-child {
-  margin-bottom: 5px;
+   margin-bottom: 5px;
 }
 .fast-mode,
 .dark-mode {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 8px;
 }
 .dark-mode {
-  justify-content: start;
+   justify-content: start;
 }

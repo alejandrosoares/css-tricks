@@ -1,99 +1,99 @@
-
-/* CONTACT */   
+/* CONTACT */
 #contact {
-    display: block;
-    width: 100%;
-    border-radius: 5px;
-    padding: .5rem;
-    font-size: var(--lg);
-    margin: 5px auto;
+   display: block;
+   width: 100%;
+   border-radius: 5px;
+   padding: 0.5rem;
+   font-size: var(--lg);
+   margin: 5px auto;
 }
 
-.contact-header, .contact-body {
-    display: block;
-    width: 50%;
-    margin: 10px auto;
+.contact-header,
+.contact-body {
+   display: block;
+   width: 50%;
+   margin: 10px auto;
 }
-.contact-email > input, 
-.contact-msg, 
+.contact-email > input,
+.contact-msg,
 .contact-button {
-    border: 2px solid var(--dark);
-    padding: 5px;
-    margin: 5px 0;
-    border-radius: 5px;
-    display: block;
-    width: 100%;
+   border: 2px solid var(--dark);
+   padding: 5px;
+   margin: 5px 0;
+   border-radius: 5px;
+   display: block;
+   width: 100%;
 }
 .contact-msg {
-    min-height: 80px;
+   min-height: 80px;
 }
-.contact-email > input:focus, 
+.contact-email > input:focus,
 .contact-msg:focus {
-    outline: none;
-    border: 2px solid var(--blue-hover);
+   outline: none;
+   border: 2px solid var(--blue-hover);
 }
 .contact-button {
-    color:var(--white);
-    background-color: var(--dark);
-    font-size: var(--lg);
-    font-weight: bold;
-    height: 36px;
-    line-height: var(--lg);
+   color: var(--white);
+   background-color: var(--dark);
+   font-size: var(--lg);
+   font-weight: bold;
+   height: 36px;
+   line-height: var(--lg);
 }
 .contact-button:hover {
-    background-color: var(--blue-hover);
-    border: 2px solid var(--blue-hover);
+   background-color: var(--blue-hover);
+   border: 2px solid var(--blue-hover);
 }
 .contact-button:focus {
-    background-color:var(--blue-hover);
-    border: 2px solid var(--blue-hover);
-    outline: none;
+   background-color: var(--blue-hover);
+   border: 2px solid var(--blue-hover);
+   outline: none;
 }
 
 /* contact message */
 .contact-message {
-    width: 50%;
-    margin: 50px auto;
-    padding: 50px;
-    border-radius: 5px;
-    background-color: var(--white);
+   width: 50%;
+   margin: 50px auto;
+   padding: 50px;
+   border-radius: 5px;
+   background-color: var(--white);
 }
 .contact-message h2 {
-    color: var(--dark) !important;
+   color: var(--dark) !important;
 }
 .contact-message h2 img {
-    width: 20px;
-    height: auto;
-    margin-right: 5px;
+   width: 20px;
+   height: auto;
+   margin-right: 5px;
 }
 .contact-button-loader {
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    margin-left: 10px;
-    color: var(--white);
+   display: inline-block;
+   width: 22px;
+   height: 22px;
+   margin-left: 10px;
+   color: var(--white);
 }
 .contact-button-disabled {
-    pointer-events: none;
-    display: flex;
-    height: 36px;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.9;
+   pointer-events: none;
+   display: flex;
+   height: 36px;
+   justify-content: center;
+   align-items: center;
+   opacity: 0.9;
 }
 
-@media screen and (max-width:767px){
-    .contact-body {
-        width: 90%;
-    } 
+@media screen and (max-width: 767px) {
+   .contact-body {
+      width: 90%;
+   }
 }
-@media screen and (min-width:768px) and (max-width:991px){
-    .contact-body {
-        width: 70%;
-    }  
+@media screen and (min-width: 768px) and (max-width: 991px) {
+   .contact-body {
+      width: 70%;
+   }
 }
-@media screen and (min-width:992px){
-    .contact-body {
-        width: 50%;
-    }  
+@media screen and (min-width: 992px) {
+   .contact-body {
+      width: 50%;
+   }
 }
