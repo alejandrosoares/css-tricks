@@ -41,13 +41,15 @@ function setDarkModeStatus(active) {
     @param: bool
     */
 
-   const iconConf = document.querySelector(".conf-icon img");
+   const iconConf = document.querySelector(".conf-icon img"),
+      loader = document.getElementById("loader");
 
    if (active) {
       // Adding dark-mode styles
       addStyle(true, ["body", ".conf", ".header", ".footer"]);
 
       iconConf.setAttribute("src", "app/assets/img/conf-white.png");
+      loader.setAttribute("src", "app/assets/img/loader-white.svg");
 
       setTimeout(() => {
          addStyle(true, [".contact"]);
@@ -57,6 +59,7 @@ function setDarkModeStatus(active) {
       addStyle(false, ["body", ".conf", ".header", ".footer"]);
 
       iconConf.setAttribute("src", "app/assets/img/conf.png");
+      loader.setAttribute("src", "app/assets/img/loader.svg");
 
       setTimeout(() => {
          addStyle(false, [".contact"]);

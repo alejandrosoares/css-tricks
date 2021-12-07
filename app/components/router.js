@@ -13,9 +13,11 @@ export async function Router() {
 
    let { hash } = location;
 
+   showLoader(true);
+
    if (!hash) {
       // Home
-
+      
       activeLink("");
 
       await request({
