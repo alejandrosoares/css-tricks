@@ -1,3 +1,4 @@
+import global from "../../helpers/global.js";
 import contactMessage from "./message.js";
 import request from "../../helpers/request.js";
 
@@ -27,6 +28,10 @@ export default function Contact() {
    contact.id = "contact";
    contact.classList.add("contact");
    contact.setAttribute("onsubmit", "return false");
+   
+   if(global.DARK_MODE) contact.classList.add("contact-dark-mode");
+
+   
 
    // Submit event
    contact.addEventListener("submit", (e) => {
